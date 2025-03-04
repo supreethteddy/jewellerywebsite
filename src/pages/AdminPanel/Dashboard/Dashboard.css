@@ -1,0 +1,6 @@
+@media (min-width: 600px) {
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
