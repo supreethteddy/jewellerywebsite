@@ -4,19 +4,8 @@ import Footer from "../../components/Footer";
 import img1 from "../../assets/images/aboutus/image-1.jpg";
 import img2 from "../../assets/images/aboutus/image-2.jpg";
 import { Star } from "lucide-react";
-// import { Swiper, SwiperSlide } from "swiper/react";
 import img3 from "../../assets/images/aboutus/image-3.jpg";
-import img4 from "../../assets/images/aboutus/image-4.jpg";
 import img5 from "../../assets/images/aboutus/image-5.jpg";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-
-// import required modules
-// import { Autoplay, Pagination, Navigation } from "swiper/modules";
-// import { celebrityJewelleryItems } from "../../constant";
 
 const AboutUs = () => {
   return (
@@ -37,10 +26,51 @@ const AboutUs = () => {
           data-aos="fade-up"
           className="text-center max-w-3xl mx-auto font-light"
         >
-          At Soulsun, we believe jewellery goes beyond beauty. It represents
-          love, milestones, and unforgettable moments. Our mission is simple —
-          to create timeless, elegant pieces that speak to your heart and become
-          a meaningful part of your journey.
+          At{" "}
+          <b>
+            SoulSun, we believe that jewelry is more than just an accessory—it’s
+            a form of self-expression, a keepsake of cherished moments, and a
+            piece of timeless artistry. Founded by husband-and-wife duo
+            Sanjuktaa and Sagar
+          </b>
+          , our brand is built on a shared passion for craftsmanship, fashion,
+          and elegance.
+          <br />
+          <br />
+          Sagar’s journey began in the world of fashion, where he spent years as
+          a model working with leading brands and designers, mastering the art
+          of style and presentation. He later stepped into his family’s footwear
+          manufacturing business, immersing himself in the intricacies of
+          design, quality, and production. Meanwhile, Sanjuktaa’s career
+          flourished in luxury fashion, beginning with{" "}
+          <b> Louis Vuitton in India and Paris</b> and later becoming{" "}
+          <b>Retail Head at designer Gaurav Gupta</b>, where she has been
+          shaping luxury retail experiences for nearly a decade.
+          <br />
+          <br />
+          With our combined expertise in fashion, luxury, and craftsmanship,
+          <b>
+            {" "}
+            SoulSun was born—a brand that embodies our love for fine jewelry,
+            exceptional quality, and accessible elegance. We meticulously curate
+            and create jewelry that blends sophistication, affordability, and
+            timeless beauty
+          </b>
+          .
+          <br />
+          <br />
+          For us, jewelry is more than just an ornament; it carries memories,
+          emotions, and traditions. Whether you’re celebrating a milestone,
+          embracing your individuality, or simply indulging in a beautiful
+          piece, <b>SoulSun is here to make those moments even more special</b>.
+          <br />
+          <br />
+          <b>
+            Thank you for being part of our journey— we can't wait to be part of
+            yours.
+          </b>
+          <br />
+          <br />— Sanjuktaa & Sagar, Co-founders of SoulSun
         </p>
       </section>
       <img
@@ -89,71 +119,6 @@ const AboutUs = () => {
             ))}
         </div>
       </div>
-      {/* <section>
-        <div className="wrapper">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="uppercase text-xl mb-2">Celebrity Highlights</p>
-            <p className="text-md font-light">
-              Dua Lipa, Zendaya, Lady Gaga, Kim Kardashion, Adele, Billie Eilish
-              and other icons of contemporary fashion and culture have been
-              spotted countless times in SOULSUN's jewellery. 
-            </p>
-          </div>
-        </div>
-        <div className="pt-[3rem] wrapper">
-          <h2 className="uppercase text-xl text-center tracking-widest">
-            Celebrities
-          </h2>
-          <div className="mt-[2rem]">
-            <Swiper
-              spaceBetween={20}
-              breakpoints={{
-                0: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                550: {
-                  slidesPerView: 3,
-                  spaceBetween: 20,
-                },
-                930: {
-                  slidesPerView: 4,
-                  spaceBetween: 20,
-                },
-              }}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              loop
-              modules={[Autoplay, Pagination, Navigation]}
-              className="mySwiper"
-            >
-              {celebrityJewelleryItems.map(({ id, img, img2 }) => (
-                <SwiperSlide>
-                  <div
-                    key={id}
-                    className="text-center h-fit flex flex-col transition-all duration-200 gap-2 items-center pb-[2rem] group"
-                  >
-                    <img
-                      src={img}
-                      className="group-hover:w-0 w-full aspect-[3/4] duration-300 object-cover"
-                      alt="Celebrity"
-                      loading="lazy"
-                    />
-                    <img
-                      src={img2}
-                      className="group-hover:w-full w-0 aspect-[3/4] duration-300 object-contain"
-                      alt="Celebrity"
-                      loading="lazy"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-        </div>
-      </section> */}
       <section className="pb-[3rem] pt-[1rem] flex flex-col gap-[2rem]">
         <div className="wrapper">
           <div className="max-w-3xl mx-auto text-center">
@@ -204,27 +169,6 @@ const AboutUs = () => {
           </div>
         </div>
       </section>
-      {/* <section className="pb-[3rem]">
-        <div className="wrapper mb-[2rem]">
-          <div className="max-w-3xl mx-auto text-center">
-            <p className="uppercase text-xl mb-2">PODS</p>
-            <p className="text-md font-light">
-              The first brand to create earrings for Apple's Airpods, SOULSUN's
-              Pebble Pods took the internet by storm. Published in over 70
-              countries worldwide, they were shortlisted for Dezeen's design
-              award in 2021.
-            </p>
-          </div>
-        </div>
-        <img
-          className="h-full w-full object-contain"
-          src={img4}
-          width="500"
-          height="400"
-          alt="About Us 4"
-          loading="lazy"
-        />
-      </section> */}
       <section className="py-[2rem] wrapper flex flex-col-reverse md:grid grid-cols-2 gap-7 items-center">
         <div className="">
           <img
