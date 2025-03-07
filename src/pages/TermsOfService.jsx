@@ -7,19 +7,19 @@ const TermsOfService = () => {
     <div className="pt-[5rem]">
       <Header />
       <section className="wrapper !max-w-5xl py-16">
-        <h1 className="uppercase text-xl mb-5 text-center">Terms and Conditions</h1>
+        <h1 className="uppercase text-xl mb-5 text-center">
+          Terms and Conditions
+        </h1>
         <div className="prose mx-auto">
           <p className="mb-6 desc">
-            Welcome to <b>Soulsun.in</b>! These Terms and Conditions
-            are here to help you understand the rules and guidelines for using
-            our website and purchasing our products. By accessing or using our
-            site, you agree to follow these terms. Please take a moment to read
-            them carefully to ensure a smooth and enjoyable shopping experience.
+            Welcome to <b>Soulsun.in</b>! These Terms and Conditions are here to
+            help you understand the rules and guidelines for using our website
+            and purchasing our products. By accessing or using our site, you
+            agree to follow these terms. Please take a moment to read them
+            carefully to ensure a smooth and enjoyable shopping experience.
           </p>
 
-          <h2 className="text-xl mt-8 mb-4">
-            1. Acceptance of Terms
-          </h2>
+          <h2 className="text-xl mt-8 mb-4">1. Acceptance of Terms</h2>
           <p className="mb-6 desc">
             When you use <strong>Soulsun.in</strong>, you confirm that you are
             at least 18 years old or have permission from a legal guardian to
@@ -27,9 +27,7 @@ const TermsOfService = () => {
             that you avoid using our website.
           </p>
 
-          <h2 className="text-xl mt-8 mb-4">
-            2. Product Information
-          </h2>
+          <h2 className="text-xl mt-8 mb-4">2. Product Information</h2>
           <ul className="list-disc pl-6 mb-6 desc">
             <li>
               We do our best to provide accurate and detailed descriptions of
@@ -47,9 +45,7 @@ const TermsOfService = () => {
             </li>
           </ul>
 
-          <h2 className="text-xl mt-8 mb-4">
-            3. Ordering and Payment
-          </h2>
+          <h2 className="text-xl mt-8 mb-4">3. Ordering and Payment</h2>
           <ul className="list-disc pl-6 mb-6 desc">
             <li>
               When you place an order on <strong>Soulsun.in</strong>, it’s
@@ -67,13 +63,11 @@ const TermsOfService = () => {
             </li>
           </ul>
 
-          <h2 className="text-xl mt-8 mb-4">
-            4. Shipping and Delivery
-          </h2>
+          <h2 className="text-xl mt-8 mb-4">4. Shipping and Delivery</h2>
           <ul className="list-disc pl-6 mb-6 desc">
             <li>
               We aim to process and ship your order within{" "}
-              <strong>3-5 working days</strong>. Delivery times may vary
+              <strong>3-6 working days</strong>. Delivery times may vary
               depending on your location and the shipping method you select.
             </li>
             <li>
@@ -110,9 +104,7 @@ const TermsOfService = () => {
             </li>
           </ul>
 
-          <h2 className="text-xl mt-8 mb-4">
-            6. Intellectual Property
-          </h2>
+          <h2 className="text-xl mt-8 mb-4">6. Intellectual Property</h2>
           <p className="mb-6 desc">
             Everything on this website—text, images, logos, and designs—is owned
             by <strong>Soulsun.in</strong> and is protected by copyright laws.
@@ -120,9 +112,7 @@ const TermsOfService = () => {
             strictly prohibited.
           </p>
 
-          <h2 className="text-xl mt-8 mb-4">
-            7. User Responsibilities
-          </h2>
+          <h2 className="text-xl mt-8 mb-4">7. User Responsibilities</h2>
           <p className="mb-6 desc">
             You agree to use our website for lawful purposes only and to avoid
             any activity that could harm the site or its users. Providing false
@@ -130,9 +120,7 @@ const TermsOfService = () => {
             result in order cancellation or account suspension.
           </p>
 
-          <h2 className="text-xl mt-8 mb-4">
-            8. Limitation of Liability
-          </h2>
+          <h2 className="text-xl mt-8 mb-4">8. Limitation of Liability</h2>
           <p className="mb-6 desc">
             <strong>Soulsun.in</strong> is not responsible for any indirect,
             incidental, or consequential damages that may arise from using our
@@ -140,25 +128,7 @@ const TermsOfService = () => {
             you paid for the specific product in question.
           </p>
 
-          <h2 className="text-xl mt-8 mb-4">
-            9. Privacy Policy
-          </h2>
-          <p className="mb-6 desc">
-            Your privacy matters to us. To learn more about how we collect, use,
-            and protect your personal information, please refer to our{" "}
-            <strong>Privacy Policy</strong>.
-          </p>
-
-          <h2 className="text-xl mt-8 mb-4">
-            10. Changes to Terms and Conditions
-          </h2>
-          <p className="mb-6 desc">
-            We may update or modify these terms at any time without prior
-            notice. By continuing to use the website after any changes, you
-            agree to the updated terms.
-          </p>
-
-          <h2 className="text-xl mt-8 mb-4">12. Contact Us</h2>
+          <h2 className="text-xl mt-8 mb-4">9. Contact Us</h2>
           <p className="mb-6 desc">
             If you have any questions or concerns about these terms, please feel
             free to reach out to us at:
@@ -176,14 +146,14 @@ const TermsOfService = () => {
             <li>
               Phone:{" "}
               <a
-                href="tel:+91-XXX-XXX-XXXX"
+                href="tel:+91-9532060606"
                 className="text-blue-600 hover:underline"
               >
-                +91-XXX-XXX-XXXX
+                +91-9532060606
               </a>
             </li>
             <li>
-              Address: <strong>[Your Company Address]</strong>
+              Address: <strong>Delhi, India</strong>
             </li>
           </ul>
 
