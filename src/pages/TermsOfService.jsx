@@ -158,15 +158,6 @@ const TermsOfService = () => {
             agree to the updated terms.
           </p>
 
-          <h2 className="text-xl mt-8 mb-4">
-            11. Governing Law
-          </h2>
-          <p className="mb-6 desc">
-            These terms are governed by the laws of India. Any disputes related
-            to these terms will be resolved in the courts of{" "}
-            <strong>[Your Jurisdiction]</strong>.
-          </p>
-
           <h2 className="text-xl mt-8 mb-4">12. Contact Us</h2>
           <p className="mb-6 desc">
             If you have any questions or concerns about these terms, please feel

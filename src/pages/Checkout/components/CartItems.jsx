@@ -74,7 +74,7 @@ const CartItems = ({
         </div>
         <div className="flex justify-between">
           <p className="">Shipping</p>
-          <p className="">{shippingCharges}</p>
+          <p className="">{shippingCharges === 0 ? "FREE" : shippingCharges}</p>
         </div>
         <div className="flex justify-between">
           <p className="">Discount</p>
