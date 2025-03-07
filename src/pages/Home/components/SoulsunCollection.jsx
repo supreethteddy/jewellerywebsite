@@ -156,7 +156,7 @@ const SoulsunCollection = () => {
         </div>
         <div className="p-5 bg-[#1C1B1B] text-white flex items-center">
           <p>
-            Welcome to Soulsun Season! Those born under this intense water sign
+            Welcome to Soulsun! Those born under this intense water sign
             are celebrated for their passion, determination, and magnetic
             presence. Represented by the scorpion, Scorpios are known for their
             depth and transformative power, diving fearlessly into the mysteries

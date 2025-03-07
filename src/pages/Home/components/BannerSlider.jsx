@@ -36,10 +36,12 @@ const BannerSlider = () => {
           data-aos="fade-right"
           className="wrapper flex flex-col gap-2 absolute left-[2rem] bottom-[3rem] text-black"
         >
-          <p className="uppercase font-light">New In</p>
-          <h4 className="heading-2 uppercase">The Soulsun Collection</h4>
+          <p className="uppercase font-light">Women's Day Special</p>
+          <h4 className="heading-2 uppercase">
+            This Women's Day, <br /> Adorn Yourself with Confidence
+          </h4>
           <LinkButton path="/shop/necklace" className="w-fit">
-            Get Started
+            Checkout Necklaces
           </LinkButton>
         </div>
       </SwiperSlide>
@@ -57,8 +59,8 @@ const BannerSlider = () => {
         >
           <p className="uppercase font-light">New In</p>
           <h4 className="heading-2 uppercase">The Soulsun Collection</h4>
-          <LinkButton path="/shop/necklace" className="w-fit">
-            Get Started
+          <LinkButton path="/shop/earrings" className="w-fit">
+            Checkout Earrings
           </LinkButton>
         </div>
       </SwiperSlide>
