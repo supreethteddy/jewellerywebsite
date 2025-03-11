@@ -17,7 +17,6 @@ import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import ProtectedRoute from "./components/protectedRoute";
 import NotFound from "./components/notfound";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Shop = lazy(() => import("./pages/Shop/Shop"));
