@@ -36,10 +36,7 @@ const Home = () => {
         <MustHave />
       </section>
       <section className="w-full relative">
-        {/* <JoinSoulsunPopup
-          data-aos="fade-left"
-          className={"bottom-0 right-[2rem]"}
-        /> */}
+        
         <div className="pb-[4rem] max-w-4xl mx-auto">
           <div
             data-aos="fade-up"
