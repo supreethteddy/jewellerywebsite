@@ -54,12 +54,12 @@ const ProductsPage = () => {
           <div className="flex sm:flex-row flex-col justify-between sm:items-center gap-4">
             <h4 className="heading-2">Products</h4>
             <div className="flex items-center gap-5">
-              <button
+              {/* <button
                 onClick={() => setShowAddCategoryModal(true)}
                 className="btn1 bg-primary text-white hover:bg-primary/90"
               >
                 <Plus strokeWidth={3} size={17} /> <span>Add Category</span>
-              </button>
+              </button> */}
               <button
                 onClick={() =>
                   setShowAddProductModal({ status: true, defaultValues: null })
