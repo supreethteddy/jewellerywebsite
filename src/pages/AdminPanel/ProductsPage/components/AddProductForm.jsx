@@ -21,6 +21,19 @@ const AddProductForm = ({
 
   const [errors, setErrors] = useState({});
 
+  useEffect(() => {
+    if (!isOpen) {
+      setFormData({
+        name: "",
+        price: "",
+        description: "",
+        category: "",
+        bestSeller: false,
+        images: { img1: null, img2: null },
+      });
+    }
+  }, [isOpen]);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
