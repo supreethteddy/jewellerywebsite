@@ -17,6 +17,7 @@ function loadScript(src) {
 
 export const displayRazorpay = async (amount, reset, setCartItems,data) => {
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+  console.log(amount)
 
   try {
     // Load Razorpay script

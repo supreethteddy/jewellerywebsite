@@ -3,7 +3,6 @@ import OrdersTable from "./components/OrdersTable";
 import { ArrowLeft, ArrowRight, Search } from "lucide-react";
 import Dropdown from "./components/Dropdown";
 import apiClient from "../../../lib/utils";
-import InvoiceModal from "./components/InvoiceModal";
 
 const Orders = () => {
   const [sortBy, setSortBy] = React.useState("Date");

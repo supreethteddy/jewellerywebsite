@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
-
 const pages = [
   {
     icon: Home,
@@ -55,15 +54,15 @@ const AdminPanelLayout = () => {
           <div className="relative w-full">
             <div className="md:h-screen bg-[#F6F8F9] fixed left-0 py-[2rem] px-[1rem] hidden md:flex flex-col justify-between gap-1">
               <div className="h-full flex flex-col items-center">
-                <h2 className="text-3xl text-primary">SOULSUN</h2>
+                <h2 className="text-3xl !text-primary">SOULSUN</h2>
                 <div className="space-y-1 pt-[2rem] w-full">
                   {pages.map((page, index) => (
-                    <Link
+                    <a
                       key={index}
-                      to={page.path}
+                      href={page.path}
                       className={`${
-                        pathname === page.path && "bg-[#D7EDFF] text-[#4094F7]"
-                      } flex items-center gap-2 w-full py-[.5rem] px-[1.5rem] rounded-md`}
+                        pathname === page.path && "bg-[#D7EDFF]"
+                      } text-black flex !no-underline items-center gap-2 w-full py-[.5rem] px-[1.5rem] rounded-md`}
                     >
                       <page.icon
                         size={20}
@@ -73,8 +72,8 @@ const AdminPanelLayout = () => {
                             : "text-gray-600"
                         }`}
                       />
-                      <span>{page.name}</span>
-                    </Link>
+                      <span className="!no-underline">{page.name}</span>
+                    </a>
                   ))}
                 </div>
               </div>

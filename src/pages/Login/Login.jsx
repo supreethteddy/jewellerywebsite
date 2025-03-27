@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import apiClient from "../../lib/utils";
 import { Eye, EyeOff } from "lucide-react";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -28,13 +29,22 @@ const Login = () => {
   };
   const onSubmit = async (data) => {
     try {
-      const res = await apiClient.post({ url: "/auth/login", data , showToast:true});
+      const res = await apiClient.post({
+        url: "/auth/login",
+        data,
+        showToast: true,
+      });
       if (res?.token) {
         navigate("/");
         reset();
       }
     } catch (error) {
-      console.log(error?.data?.message || "error");
+      console.log(error);
+      if (error.response.data?.message) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error(error.message);
+      }
     }
   };
   return (
@@ -81,8 +91,15 @@ const Login = () => {
                   value.includes(" ") ? "Password cannot contain spaces" : true,
               })}
             />
-            <div onClick={togglePasswordVisibility} className="cursor-pointer text-[#686767]">
-              {showPassword ? <Eye color="#686767"/> : <EyeOff color="#686767"/>}
+            <div
+              onClick={togglePasswordVisibility}
+              className="cursor-pointer text-[#686767]"
+            >
+              {showPassword ? (
+                <Eye color="#686767" />
+              ) : (
+                <EyeOff color="#686767" />
+              )}
             </div>
             {/* <span className="min-w-[128px] text-[#6A6A6A]">
               {" "}

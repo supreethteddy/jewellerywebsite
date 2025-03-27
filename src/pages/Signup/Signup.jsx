@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import apiClient from "../../lib/utils";
 import { Eye, EyeOff } from "lucide-react";
+import toast from "react-hot-toast";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -32,7 +33,11 @@ const Signup = () => {
       const res = await apiClient.post({ url: "/auth/register", data });
       navigate("/login");
     } catch (error) {
-      console.log("error");
+      if (error.response.data?.message) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error(error.message);
+      }
     } finally {
       reset();
     }

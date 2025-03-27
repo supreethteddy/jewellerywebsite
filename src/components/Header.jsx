@@ -88,8 +88,11 @@ const Header = () => {
     : 0;
 
   return (
-    <div className="pt-2 border pb-2 bg-white left-0 top-0 z-[100] fixed w-full">
-      <div className="wrapper grid grid-cols-[30%_auto] sm:grid-cols-[35%_auto_35%] gap-4 sm:gap-7 lg:items-end items-center lg:pb-2">
+    <div className="border pb-2 bg-white left-0 top-0 z-[100] fixed w-full">
+      <div className="p-2 text-white text-center bg-primary text-[.95rem]">
+        Thanks for visiting! Enjoy 15% on all orders | Use Code: <span className="font-semibold tracking-wide">SOULFLARE15</span>
+      </div>
+      <div className="pt-2 wrapper grid grid-cols-[30%_auto] sm:grid-cols-[35%_auto_35%] gap-4 sm:gap-7 lg:items-end items-center lg:pb-2">
         <div className="flex items-end gap-[3rem]">
           <Link className="w-fit" to="/">
             <img

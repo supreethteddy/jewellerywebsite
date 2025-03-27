@@ -13,6 +13,7 @@ const CartItems = ({
 }) => {
   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   const [discount, setDiscount] = useState(0);
+  const [couponApplied, setCouponApplied] = useState(false);
   const {
     register,
     handleSubmit,
@@ -32,6 +33,7 @@ const CartItems = ({
       if (res.message.includes("successfully")) {
         setTotal(res.finalTotal);
         setDiscount(res.discount);
+        setCouponApplied(true);
       }
       console.log(res);
     } catch (error) {
@@ -90,28 +92,30 @@ const CartItems = ({
           </p>
         )}
       </div>
-      <form
-        onSubmit={handleSubmit(handleFormSubmit)}
-        className="p-2 w-full bg-gray-500 rounded-lg mt-5"
-      >
-        <label className="text-[.95rem] text-white">Coupon Code</label>
-        <div className="flex gap-2 w-full">
-          <input
-            type="text"
-            className="p-2 rounded-md outline-none border-2 w-full"
-            {...register("code", {
-              required: "coupon code is required",
-            })}
-          />
-          <button
-            type="submit"
-            className="bg-primary px-2 rounded-md text-white"
-          >
-            Apply
-          </button>
-        </div>
-        <small className="text-red-600">{errors.code?.message}</small>
-      </form>
+      {!couponApplied && (
+        <form
+          onSubmit={handleSubmit(handleFormSubmit)}
+          className="p-2 w-full bg-gray-500 rounded-lg mt-5"
+        >
+          <label className="text-[.95rem] text-white">Coupon Code</label>
+          <div className="flex gap-2 w-full">
+            <input
+              type="text"
+              className="p-2 rounded-md outline-none border-2 w-full"
+              {...register("code", {
+                required: "coupon code is required",
+              })}
+            />
+            <button
+              type="submit"
+              className="bg-primary px-2 rounded-md text-white"
+            >
+              Apply
+            </button>
+          </div>
+          <small className="text-red-600">{errors.code?.message}</small>
+        </form>
+      )}
     </div>
   );
 };
