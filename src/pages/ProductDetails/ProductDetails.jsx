@@ -75,13 +75,14 @@ const ProductDetails = () => {
         setNecklaceItems(res2?.products);
         setEaringsItems(res3?.products);
         const itemExistInCart = cartData.find((item) => item.id === productId);
+        console.log(res);
         setProductDetails({
           ...res?.product,
           isInCart: Boolean(itemExistInCart),
         });
       } catch (error) {
         console.log(error);
-        console.log(error?.data?.message || "error");
+        console.log(error?.data?.message);
       }
     };
     getAllProducts();

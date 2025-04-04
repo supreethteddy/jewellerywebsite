@@ -11,6 +11,10 @@ const supportLinks = [
     name: "Terms of Service",
     path: "/terms-of-service",
   },
+  {
+    name: "Privacy Policy",
+    path: "/privacy-policy",
+  },
 ];
 
 const links = [

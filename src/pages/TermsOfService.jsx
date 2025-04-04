@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 const TermsOfService = () => {
   return (
-    <div className="pt-[5rem]">
+    <div className="pt-[7rem]">
       <Header />
       <section className="wrapper !max-w-5xl py-16">
         <h1 className="uppercase text-xl mb-5 text-center">

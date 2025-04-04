@@ -24,6 +24,7 @@ const AboutUs = lazy(() => import("./pages/AboutUs/AboutUs"));
 const ProductDetails = lazy(() =>
   import("./pages/ProductDetails/ProductDetails")
 );
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("./pages/TermsOfService"));
 const Checkout = lazy(() => import("./pages/Checkout/Checkout"));
 const Cart = lazy(() => import("./pages/Cart/Cart"));
@@ -73,6 +74,7 @@ function App() {
             <Route path="/" element={<Home />} />
 
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
             {/* Products listing */}
             <Route path="/shop/*" element={<Navigate to="/shop/necklace" />} />
