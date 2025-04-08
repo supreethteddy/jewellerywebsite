@@ -7,14 +7,20 @@ import {
   Shapes,
   ShoppingCart,
   StickyNote,
+  Laptop2,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const pages = [
   {
+    icon: Laptop2,
+    name: "Site Overview",
+    path: "/admin",
+  },
+  {
     icon: Home,
     name: "Dashboard",
-    path: "/admin",
+    path: "/admin/dashboard",
   },
   {
     icon: PackageSearch,

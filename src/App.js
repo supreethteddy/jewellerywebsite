@@ -11,12 +11,15 @@ import ScrollToTop from "./components/ScrollToTop";
 import { lazy, Suspense } from "react";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "react-query";
 
 // Corrected import paths for Login and Signup components
 import Login from "./pages/Login/Login";
 import Signup from "./pages/Signup/Signup";
 import ProtectedRoute from "./components/protectedRoute";
 import NotFound from "./components/notfound";
+
+const queryClient = new QueryClient();
 
 const Home = lazy(() => import("./pages/Home/Home"));
 const Shop = lazy(() => import("./pages/Shop/Shop"));
@@ -33,6 +36,7 @@ const ProfileLayout = lazy(() => import("./components/ProfileLayout"));
 const UserProfile = lazy(() => import("./pages/User/UserProfile/UserProfile"));
 const Wishlist = lazy(() => import("./pages/User/Wishlist/Wishlist"));
 const Address = lazy(() => import("./pages/User/Address/Address"));
+const OverviewDashboard = lazy(() => import("./pages/Dashboard"));
 const OrderHistory = lazy(() =>
   import("./pages/User/OrderHistory/OrderHistory")
 );
@@ -59,91 +63,97 @@ AOS.init({
 function App() {
   return (
     <SpinnerContextProvider>
-      <Suspense fallback={<LoadingSpinner />}>
-        <Router>
-          <ScrollToTop />
-          <Toaster
-            toastOptions={{
-              style: {
-                backgroundColor: "#edce8b",
-              },
-            }}
-          />
-          <Routes>
-            {/* Home */}
-            <Route path="/" element={<Home />} />
-
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
-            {/* Products listing */}
-            <Route path="/shop/*" element={<Navigate to="/shop/necklace" />} />
-            <Route
-              path="/shop/:category"
-              element={
-                <>
-                  <Shop />
-                </>
-              }
+      <QueryClientProvider client={queryClient}>
+        <Suspense fallback={<LoadingSpinner />}>
+          <Router>
+            <ScrollToTop />
+            <Toaster
+              toastOptions={{
+                style: {
+                  backgroundColor: "#edce8b",
+                },
+              }}
             />
+            <Routes>
+              {/* Home */}
+              <Route path="/" element={<Home />} />
 
-            {/* About us */}
-            <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
 
-            {/* Product details */}
-            <Route
-              path="/product-details/:productId"
-              element={<ProductDetails />}
-            />
+              {/* Products listing */}
+              <Route
+                path="/shop/*"
+                element={<Navigate to="/shop/necklace" />}
+              />
+              <Route
+                path="/shop/:category"
+                element={
+                  <>
+                    <Shop />
+                  </>
+                }
+              />
 
-            {/* Checkout */}
-            <Route path="/checkout" element={<Checkout />} />
+              {/* About us */}
+              <Route path="/about-us" element={<AboutUs />} />
 
-            {/* Auth */}
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Signup" element={<Signup />} />
+              {/* Product details */}
+              <Route
+                path="/product-details/:productId"
+                element={<ProductDetails />}
+              />
 
-            {/* Cart */}
-            <Route path="/cart" element={<Cart />} />
+              {/* Checkout */}
+              <Route path="/checkout" element={<Checkout />} />
 
-            {/* Admin */}
-            <Route path="/admin/login" element={<AdminLogin />} />
+              {/* Auth */}
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Signup" element={<Signup />} />
 
-            <Route
-              path="/"
-              element={
-                <ProtectedRoute>
-                  <ProfileLayout />
-                </ProtectedRoute>
-              }
-            >
-              <Route path="profile" element={<UserProfile />} />
-              <Route path="address" element={<Address />} />
-              <Route path="orders" element={<OrderHistory />} />
-              <Route path="wishlist" element={<Wishlist />} />
-              <Route path="support" element={<Support />} />
-            </Route>
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route
-              path="/admin"
-              element={
-                <ProtectedRoute>
-                  <AdminPanelLayout />
-                </ProtectedRoute>
-              }
-            >
-              <Route path="*" element={<Navigate to="/admin" />} />
-              <Route path="" exact element={<Dashboard />} />
-              <Route path="products" exact element={<ProductsPage />} />
-              <Route path="orders" exact element={<Orders />} />
-              <Route path="coupons" exact element={<Coupons />} />
-              <Route path="reports" exact element={<Reports />} />
-            </Route>
-            {/* Catch-all route for 404 */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Router>
-      </Suspense>
+              {/* Cart */}
+              <Route path="/cart" element={<Cart />} />
+
+              {/* Admin */}
+              <Route path="/admin/login" element={<AdminLogin />} />
+
+              <Route
+                path="/"
+                element={
+                  <ProtectedRoute>
+                    <ProfileLayout />
+                  </ProtectedRoute>
+                }
+              >
+                <Route path="profile" element={<UserProfile />} />
+                <Route path="address" element={<Address />} />
+                <Route path="orders" element={<OrderHistory />} />
+                <Route path="wishlist" element={<Wishlist />} />
+                <Route path="support" element={<Support />} />
+              </Route>
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route
+                path="/admin"
+                element={
+                  <ProtectedRoute>
+                    <AdminPanelLayout />
+                  </ProtectedRoute>
+                }
+              >
+                <Route path="*" element={<Navigate to="/admin" />} />
+                <Route path="" exact element={<OverviewDashboard />} />
+                <Route path="dashboard" exact element={<Dashboard />} />
+                <Route path="products" exact element={<ProductsPage />} />
+                <Route path="orders" exact element={<Orders />} />
+                <Route path="coupons" exact element={<Coupons />} />
+                <Route path="reports" exact element={<Reports />} />
+              </Route>
+              {/* Catch-all route for 404 */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Router>
+        </Suspense>
+      </QueryClientProvider>
     </SpinnerContextProvider>
   );
 }
