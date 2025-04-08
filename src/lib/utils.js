@@ -52,7 +52,7 @@ axiosInstance.interceptors.response.use(
         window.location.href = "/login";
       }
     } else {
-      console.log(errMsg)
+      console.log(errMsg);
       // toast.error(errMsg);
     }
     return Promise.reject(error);

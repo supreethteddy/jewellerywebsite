@@ -10,24 +10,23 @@ import Transactions from "./components/Transactions";
 import apiClient from "../../../lib/utils";
 import { useNavigate } from "react-router-dom";
 
-
 const Dashboard = () => {
-    const [range, setRange] = useState('12');
-    const [allOrders, setAllOrders] =useState()
-    const navigate = useNavigate();
+  const [range, setRange] = useState("12");
+  const [allOrders, setAllOrders] = useState();
+  const navigate = useNavigate();
 
-    const getAllCategories = async () => {
-      try {
-        const res = await apiClient.get({ url: `/shipping/getStats`,});
-        setAllOrders(res)
-      } catch (error) {
-        console.log(error?.data?.message || "error");
-      }
-    };
-  
-    useEffect(() => {
-      getAllCategories();
-    }, []);
+  const getAllCategories = async () => {
+    try {
+      const res = await apiClient.get({ url: `/shipping/getStats` });
+      setAllOrders(res);
+    } catch (error) {
+      console.log(error?.data?.message || "error");
+    }
+  };
+
+  useEffect(() => {
+    getAllCategories();
+  }, []);
 
   return (
     <div className="w-full relative">
@@ -41,11 +40,14 @@ const Dashboard = () => {
           />
         </div>
         <div className="flex items-center gap-5">
-          <button className="btn1 bg-gray-300 text-black hover:bg-gray-300/80 hover:-translate-y-1" onClick={() => {
-                  localStorage.removeItem("key");
-                  localStorage.removeItem("user");
-                  navigate("/admin/login");
-                }}>
+          <button
+            className="btn1 bg-gray-300 text-black hover:bg-gray-300/80 hover:-translate-y-1"
+            onClick={() => {
+              localStorage.removeItem("key");
+              localStorage.removeItem("user");
+              navigate("/admin/login");
+            }}
+          >
             <LogOut size={20} className="text-gray-600" />
             <span>Logout</span>
           </button>
@@ -60,17 +62,37 @@ const Dashboard = () => {
               <div className="w-full flex flex-wrap justify-between items-center gap-4">
                 <p className="font-semibold">Sales Report</p>
                 <div className="flex gap-2 text-[.8rem]">
-                  <button className={`p-2 ${range ==='12'&&'border rounded-md'}`} onClick={()=>setRange('12')}>12 Months</button>
-                  <button className={`p-2 ${range ==='6'&&'border rounded-md'}`} onClick={()=>setRange('6')}>6 Months</button>
-                  <button className={`p-2 ${range ==='30d'&&'border rounded-md'}`} onClick={()=>setRange('30d')}>30 Days</button>
-                  <button className={`p-2 ${range ==='7d'&&'border rounded-md'}`} onClick={()=>setRange('7d')}>7 Days</button>
+                  <button
+                    className={`p-2 ${range === "12" && "border rounded-md"}`}
+                    onClick={() => setRange("12")}
+                  >
+                    12 Months
+                  </button>
+                  <button
+                    className={`p-2 ${range === "6" && "border rounded-md"}`}
+                    onClick={() => setRange("6")}
+                  >
+                    6 Months
+                  </button>
+                  <button
+                    className={`p-2 ${range === "30d" && "border rounded-md"}`}
+                    onClick={() => setRange("30d")}
+                  >
+                    30 Days
+                  </button>
+                  <button
+                    className={`p-2 ${range === "7d" && "border rounded-md"}`}
+                    onClick={() => setRange("7d")}
+                  >
+                    7 Days
+                  </button>
                 </div>
                 {/* <button className="p-2 border rounded-md text-[.8rem] flex items-center gap-1 min-w-[7rem]">
                   <FilePlus2 size={20} />
                   <span>Export PDF</span>
                 </button> */}
               </div>
-              <LineChart range={range}/>
+              <LineChart range={range} />
               <Transactions />
             </div>
           </section>
@@ -78,7 +100,10 @@ const Dashboard = () => {
             <div className="rounded-lg border p-4 space-y-2 h-fit">
               <small className="text-gray-400 uppercase">Net Sales</small>
               <div className="w-full flex items-center justify-between gap-4">
-                <h5 className="font-semibold text-xl"> ₹{allOrders?.totalSales}</h5>
+                <h5 className="font-semibold text-xl">
+                  {" "}
+                  ₹{allOrders?.totalSales}
+                </h5>
                 {/* <small className="text-green-600">+5%</small> */}
               </div>
             </div>
@@ -92,7 +117,10 @@ const Dashboard = () => {
             <div className="rounded-lg border p-4 space-y-2 h-fit">
               <small className="text-gray-400 uppercase">Order</small>
               <div className="w-full flex items-center justify-between gap-4">
-                <h5 className="font-semibold text-xl"> {allOrders?.totalOrders}</h5>
+                <h5 className="font-semibold text-xl">
+                  {" "}
+                  {allOrders?.totalOrders}
+                </h5>
                 {/* <small className="text-green-600">+5%</small> */}
               </div>
             </div>
