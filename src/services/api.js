@@ -117,3 +117,16 @@ export const updateCarts = async (productId, quantityChange) => {
   });
   return response.data;
 };
+
+export const addSearchQuery = async (query) => {
+  const response = await api.post("/analytics/search-query", {
+    query,
+  });
+  return response.data;
+};
+export const getSearchQuerys = async (from, to) => {
+  const response = await api.get(
+    `/analytics/search-query?from=${from}&to=${to}`
+  );
+  return response.data;
+};

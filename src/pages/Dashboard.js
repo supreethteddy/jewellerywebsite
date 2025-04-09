@@ -7,6 +7,7 @@ import CartAnalytics from "../components/CartAnalytics";
 import SalesTrends from "../components/SalesTrends";
 import ProductPerformance from "../components/ProductPerformance";
 import DeviceStats from "../components/DeviceStats";
+import SearchQueries from "../components/search-queries";
 
 const Dashboard = () => {
   return (
@@ -92,6 +93,16 @@ const Dashboard = () => {
           </div>
 
           <DeviceStats />
+        </section>
+        <section>
+          <div className="flex items-center mb-6">
+            <div className="w-1 h-6 bg-green-600 rounded-full mr-3"></div>
+            <h2 className="text-xl font-bold text-gray-800">
+              User Search Queries
+            </h2>
+          </div>
+
+          <SearchQueries />
         </section>
       </div>
     </div>

@@ -15,6 +15,7 @@ import DropDown from "./DropDown";
 import { useDebouncedCallback } from "use-debounce";
 import apiClient from "../lib/utils";
 import CustomImg from "./ui/customImg";
+import { addSearchQuery } from "../services/api";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,6 +24,8 @@ const Header = () => {
   const [isLoggedIn, setIsLogedIn] = useState(!!localStorage.getItem("key"));
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [filteredItems, setFilteredItems] = useState([]);
+
+  const [query, setQuery] = useState("");
 
   const products = necklaceItems.concat(ringsItems, earringsItems);
 
@@ -90,7 +93,8 @@ const Header = () => {
   return (
     <div className="border pb-2 bg-white left-0 top-0 z-[100] fixed w-full">
       <div className="p-2 text-white text-center bg-primary text-[.95rem]">
-        Thanks for visiting! Enjoy 15% on all orders | Use Code: <span className="font-semibold tracking-wide">SOULFLARE15</span>
+        Thanks for visiting! Enjoy 15% on all orders | Use Code:{" "}
+        <span className="font-semibold tracking-wide">SOULFLARE15</span>
       </div>
       <div className="pt-2 wrapper grid grid-cols-[30%_auto] sm:grid-cols-[35%_auto_35%] gap-4 sm:gap-7 lg:items-end items-center lg:pb-2">
         <div className="flex items-end gap-[3rem]">
@@ -195,7 +199,11 @@ const Header = () => {
                 type="text"
                 placeholder="Search..."
                 className="w-full p-2 outline-none"
-                onChange={handleSearch}
+                onChange={async (e) => {
+                  setQuery(e.target.value);
+                  await handleSearch(e);
+                }}
+                value={query}
               />
               <button onClick={() => setIsSearchOpen(false)}>
                 <X size={20} />
@@ -207,6 +215,7 @@ const Header = () => {
                   <Link
                     key={item._id}
                     to={`/product-details/${item._id}`}
+                    onClick={async () => addSearchQuery(query)}
                     className="border border-primary rounded flex items-center gap-3"
                   >
                     <CustomImg
