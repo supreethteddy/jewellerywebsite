@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+"use client";
+
+import { useState } from "react";
 import { useQuery } from "react-query";
-import {
-  getMostViewedProducts,
-  getMostPurchasedProducts,
-} from "../services/api";
+import { getMostViewedProducts } from "../services/api";
 import {
   BarChart,
   Bar,
@@ -18,25 +17,18 @@ import LoadingSpinner from "./LoadingSpinner.jsx";
 
 const ProductPerformance = () => {
   const [period, setPeriod] = useState(30);
-  const [limit, setLimit] = useState(5);
+  const [limit, setLimit] = useState(10);
 
+  // Only use the getMostViewedProducts API
   const {
-    data: viewedData,
-    isLoading: viewedLoading,
-    error: viewedError,
+    data: productsData,
+    isLoading,
+    error,
   } = useQuery(["mostViewedProducts", period, limit], () =>
     getMostViewedProducts({ limit, period })
   );
 
-  const {
-    data: purchasedData,
-    isLoading: purchasedLoading,
-    error: purchasedError,
-  } = useQuery(["mostPurchasedProducts", period, limit], () =>
-    getMostPurchasedProducts({ limit, period })
-  );
-
-  if (viewedLoading || purchasedLoading)
+  if (isLoading)
     return (
       <div className="bg-white p-6 rounded-xl border border-gray-100">
         <div className="flex justify-between items-center mb-6 pb-2 border-b border-gray-100">
@@ -48,7 +40,7 @@ const ProductPerformance = () => {
       </div>
     );
 
-  if (viewedError || purchasedError)
+  if (error)
     return (
       <div className="bg-white p-6 rounded-xl border border-gray-100">
         <div className="flex justify-between items-center mb-6 pb-2 border-b border-gray-100">
@@ -76,13 +68,11 @@ const ProductPerformance = () => {
       </div>
     );
 
-  const viewedProducts = viewedData?.data || [];
-  const purchasedProducts = purchasedData?.data || [];
-  const totalViewedProducts = viewedData?.meta?.totalCount || 0;
-  const totalPurchasedProducts = purchasedData?.meta?.totalCount || 0;
+  // Get products from the response
+  const products = productsData?.data || [];
 
   // Check if we have data
-  if (viewedProducts.length === 0) {
+  if (products.length === 0) {
     return (
       <div className="bg-white p-6 rounded-xl border border-gray-100">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 pb-2 border-b border-gray-100 gap-4">
@@ -123,29 +113,42 @@ const ProductPerformance = () => {
     );
   }
 
-  // Combine data for comparison chart
-  const combinedData = viewedProducts.map((product) => {
-    const purchased = purchasedProducts.find((p) => p._id === product._id);
+  // Format data for chart - sort by views in descending order
+  const sortedProducts = [...products].sort((a, b) => b.views - a.views);
+  const chartData = sortedProducts.slice(0, limit).map((product, index) => {
     return {
+      index: index + 1,
       name: product.name,
-      views: product.viewCount,
-      purchases: purchased ? purchased.totalQuantity : 0,
+      views: product.views,
+      quantity: product.quantity,
+      price: product.price,
+      totalNetSale: product.totalNetSale,
     };
   });
 
-  // Custom tooltip
-  const CustomTooltip = ({ active, payload, label }) => {
+  // Custom tooltip for hover info
+  const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
         <div className="bg-white p-3 border border-gray-200 shadow-lg rounded-md">
-          <p className="font-medium text-gray-800 mb-2">{label}</p>
+          <p className="font-medium text-gray-800 mb-2">
+            {payload[0].payload.name}
+          </p>
           <p className="text-blue-600 font-semibold flex items-center">
             <span className="w-3 h-3 bg-blue-600 rounded-full mr-2"></span>
             {`Views: ${payload[0].value}`}
           </p>
           <p className="text-green-600 font-semibold flex items-center">
             <span className="w-3 h-3 bg-green-600 rounded-full mr-2"></span>
-            {`Purchases: ${payload[1].value}`}
+            {`Quantity Sold: ${payload[0].payload.quantity}`}
+          </p>
+          <p className="text-gray-600 flex items-center mt-2">
+            <span className="w-3 h-3 bg-gray-400 rounded-full mr-2"></span>
+            {`Price: ₹${payload[0].payload.price}`}
+          </p>
+          <p className="text-purple-600 flex items-center mt-2">
+            <span className="w-3 h-3 bg-purple-600 rounded-full mr-2"></span>
+            {`Total Sales: ₹${payload[0].payload.totalNetSale}`}
           </p>
         </div>
       );
@@ -189,23 +192,18 @@ const ProductPerformance = () => {
       </div>
 
       <div className="text-sm text-gray-500 mb-4">
-        Showing {viewedProducts.length} of {totalViewedProducts} viewed products
-        and {purchasedProducts.length} of {totalPurchasedProducts} purchased
-        products
+        Showing top {chartData.length} products by views
       </div>
 
       <div className="h-80">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
-            data={combinedData}
-            margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+            data={chartData}
+            margin={{ top: 20, right: 30, left: 20, bottom: 30 }}
           >
             <CartesianGrid strokeDasharray="3 3" stroke="#f0f0f0" />
             <XAxis
-              dataKey="name"
-              angle={-45}
-              textAnchor="end"
-              height={70}
+              dataKey="index"
               tick={{ fontSize: 12, fill: "#6b7280" }}
               tickLine={{ stroke: "#e5e7eb" }}
               axisLine={{ stroke: "#e5e7eb" }}
@@ -222,17 +220,75 @@ const ProductPerformance = () => {
               fill="#3b82f6"
               name="Views"
               radius={[4, 4, 0, 0]}
-              barSize={20}
-            />
-            <Bar
-              dataKey="purchases"
-              fill="#10b981"
-              name="Purchases"
-              radius={[4, 4, 0, 0]}
-              barSize={20}
+              barSize={35}
             />
           </BarChart>
         </ResponsiveContainer>
+      </div>
+
+      <div className="mt-6">
+        <h3 className="text-md font-medium text-gray-700 mb-3">
+          Product Details
+        </h3>
+        <div className="overflow-x-auto overflow-y-auto max-h-[400px]">
+          <table className="min-w-full divide-y divide-gray-200">
+            <thead className="bg-gray-50">
+              <tr>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Product
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Views
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Quantity Sold
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Price
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                >
+                  Total Sales
+                </th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {chartData.map((product, index) => (
+                <tr key={index}>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                    {product.name}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {product.views}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    {product.quantity}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    ₹{product.price}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    ₹{product.totalNetSale}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

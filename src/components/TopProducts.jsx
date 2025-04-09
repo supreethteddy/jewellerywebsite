@@ -131,7 +131,7 @@ const TopProducts = () => {
             <select
               value={period}
               onChange={(e) => setPeriod(Number(e.target.value))}
-              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[8rem]"
             >
               <option value={7}>Last 7 days</option>
               <option value={30}>Last 30 days</option>
@@ -147,7 +147,7 @@ const TopProducts = () => {
                 setLimit(Number(e.target.value));
                 setPage(1); // Reset to first page when changing limit
               }}
-              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white"
+              className="px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white min-w-[4.5rem]"
             >
               <option value={5}>5</option>
               <option value={10}>10</option>
@@ -159,7 +159,7 @@ const TopProducts = () => {
       </div>
 
       <div className="text-sm text-gray-500 mb-4">
-        Showing {products.length} of {totalCount} products
+        Showing {products.length} of {products.length} products
       </div>
 
       <div className="h-64">

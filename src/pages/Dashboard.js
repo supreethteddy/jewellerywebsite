@@ -6,6 +6,7 @@ import RepeatCustomers from "../components/RepeatCustomers";
 import CartAnalytics from "../components/CartAnalytics";
 import SalesTrends from "../components/SalesTrends";
 import ProductPerformance from "../components/ProductPerformance";
+import DeviceStats from "../components/DeviceStats";
 
 const Dashboard = () => {
   return (
@@ -77,12 +78,20 @@ const Dashboard = () => {
         <section>
           <div className="flex items-center mb-6">
             <div className="w-1 h-6 bg-red-600 rounded-full mr-3"></div>
-            <h2 className="text-xl font-bold text-gray-800">
-              Cart & Checkout Analytics
-            </h2>
+            <h2 className="text-xl font-bold text-gray-800">Cart Analytics</h2>
           </div>
 
           <CartAnalytics />
+        </section>
+        <section>
+          <div className="flex items-center mb-6">
+            <div className="w-1 h-6 bg-green-600 rounded-full mr-3"></div>
+            <h2 className="text-xl font-bold text-gray-800">
+              Device Usage Stats
+            </h2>
+          </div>
+
+          <DeviceStats />
         </section>
       </div>
     </div>

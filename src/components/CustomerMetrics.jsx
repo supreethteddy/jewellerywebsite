@@ -101,9 +101,7 @@ const CustomerMetrics = () => {
         <div className="bg-white p-3 border border-gray-200 shadow-lg rounded-md">
           <p className="font-medium text-gray-800">{payload[0].name}</p>
           <p className="text-blue-600 font-semibold">
-            {`${payload[0].value} customers (${(
-              payload[0].percent * 100
-            ).toFixed(1)}%)`}
+            {`${payload[0].value} customers`}
           </p>
         </div>
       );

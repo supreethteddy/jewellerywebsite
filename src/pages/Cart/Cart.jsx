@@ -6,6 +6,7 @@ import { Minus, Plus, TrashIcon } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import CustomImg from "../../components/ui/customImg";
+import { updateCarts } from "../../services/api";
 
 // const initialCartItems = [
 //   {
@@ -42,7 +43,7 @@ const Cart = () => {
   const initialCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   const [cartItems, setCartItems] = useState(initialCartItems);
   const navigate = useNavigate();
-  let token = localStorage.getItem('key')
+  let token = localStorage.getItem("key");
 
   const increment = (id) => {
     const updatedData = cartItems.map((item) =>
@@ -75,12 +76,13 @@ const Cart = () => {
     0
   );
   const checkoutHandle = async () => {
-    if(token){
-    navigate('/checkout')
-  }else{
-    toast.error('Need to log in first.')
-    navigate('/login')
-  }}
+    if (token) {
+      navigate("/checkout");
+    } else {
+      toast.error("Need to log in first.");
+      navigate("/login");
+    }
+  };
   return (
     <div className="pt-[5.5rem]">
       <Header />
@@ -134,13 +136,19 @@ const Cart = () => {
                     ) : (
                       <Minus
                         className="cursor-pointer"
-                        onClick={() => decrement(item._id)}
+                        onClick={async () => {
+                          decrement(item._id);
+                          await updateCarts(item._id, -1);
+                        }}
                       />
                     )}
                     <p className="w-7 text-center">{item.quantity}</p>
                     <Plus
                       className="cursor-pointer"
-                      onClick={() => increment(item._id)}
+                      onClick={async () => {
+                        increment(item._id);
+                        await updateCarts(item._id, 1);
+                      }}
                     />
                   </div>
                 </div>
@@ -169,10 +177,7 @@ const Cart = () => {
                 >
                   Clear Cart
                 </button>
-                <button
-                  className="btn primary-btn"
-                  onClick={checkoutHandle}
-                >
+                <button className="btn primary-btn" onClick={checkoutHandle}>
                   To Checkout
                 </button>
               </div>

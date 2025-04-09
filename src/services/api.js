@@ -4,7 +4,7 @@ const API_URL = process.env.REACT_APP_BASE_URL
   ? `${process.env.REACT_APP_BASE_URL}api`
   : "http://localhost:5000/api";
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: API_URL,
   headers: {
     "Content-Type": "application/json",
@@ -82,8 +82,8 @@ export const getLoyalCustomers = async (params) => {
 };
 
 // Cart & Checkout
-export const getAbandonedCartMetrics = async (params) => {
-  const response = await api.get("/analytics/cart/abandoned", { params });
+export const getAbandonedCartMetrics = async () => {
+  const response = await api.get("/analytics/cart-analytics");
   return response.data;
 };
 
@@ -96,5 +96,24 @@ export const getFailedPaymentMetrics = async (params) => {
 
 export const getCheckoutFunnelMetrics = async (params) => {
   const response = await api.get("/analytics/checkout/funnel", { params });
+  return response.data;
+};
+
+export const getDeviceStats = async () => {
+  const response = await api.get("/analytics/device-stats");
+  return response.data;
+};
+export const addProductView = async (productId) => {
+  console.log({ productId });
+  const response = await api.post("/analytics/add-view", {
+    productId,
+  });
+  return response.data;
+};
+export const updateCarts = async (productId, quantityChange) => {
+  const response = await api.post("/analytics/cart-analytics", {
+    quantityChange,
+    productId,
+  });
   return response.data;
 };

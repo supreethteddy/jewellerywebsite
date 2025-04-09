@@ -18,6 +18,7 @@ import toast from "react-hot-toast";
 import apiClient from "../../lib/utils";
 import Skeleton from "../../components/ui/skeleton";
 import CustomImg from "../../components/ui/customImg";
+import { addProductView, updateCarts } from "../../services/api";
 
 // const productData = {
 //   name: "Sirena Hoops",
@@ -80,6 +81,7 @@ const ProductDetails = () => {
           ...res?.product,
           isInCart: Boolean(itemExistInCart),
         });
+        await addProductView(productId);
       } catch (error) {
         console.log(error);
         console.log(error?.data?.message);
@@ -92,12 +94,13 @@ const ProductDetails = () => {
     setActiveIndex(activeIndex === index ? null : index);
   };
 
-  const addItemToCart = () => {
+  const addItemToCart = async () => {
     const data = { ...productDetails, isInCart: true, quantity: 1 };
     cartData.push(data);
     setProductDetails(data);
     localStorage.setItem("cartItems", JSON.stringify(cartData));
     toast.success("Item added to cart");
+    await updateCarts(productId, 1);
   };
 
   const addToWishList = async () => {
