@@ -116,7 +116,7 @@ const Cart = () => {
             </Link>
           </div>
         ) : (
-          <div className="my-10">
+          <div className="my-20 sm:my-16">
             <h2 className="text-xl uppercase">Shopping Cart</h2>
             <div className="grid gap-6 p-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {cartItems.map((item) => (
