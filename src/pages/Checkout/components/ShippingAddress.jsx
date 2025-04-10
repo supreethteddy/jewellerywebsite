@@ -33,6 +33,7 @@ const ShippingAddress = ({ total, setCartItems }) => {
     defaultValues: {
       name: "",
       mobile: "",
+      email: "",
       pincode: "",
       address: "",
       landmark: "",
@@ -41,7 +42,21 @@ const ShippingAddress = ({ total, setCartItems }) => {
     },
   });
 
-  const handleFormSubmit = async(data) => {
+  const handleFormSubmit = async (data) => {
+    const token = localStorage.getItem("key");
+    if (!token) {
+      data.name = data.fullName;
+      const res = await apiClient.post({
+        url: "/auth/signin-guest-user",
+        data,
+        showToast: true,
+      });
+      if (res?.data?.token) {
+        const newToken = res.data.token;
+        localStorage.setItem("key", newToken);
+      }
+    }
+
     displayRazorpay(total, reset, setCartItems, data);
     // toast.success("Order Placed");
     // reset();
@@ -50,7 +65,9 @@ const ShippingAddress = ({ total, setCartItems }) => {
     <>
       <form onSubmit={handleSubmit(handleFormSubmit)}>
         <h2 className="uppercase text-xl mb-1">Shipping Address</h2>
-        <p className="mb-3 animate_color">Estimated Delivery: 3-6 Business Days</p>
+        <p className="mb-3 animate_color">
+          Estimated Delivery: 3-6 Business Days
+        </p>
         <div className="flex flex-col gap-3">
           <div className="grid sm:grid-cols-2 gap-3">
             <div className="">
@@ -86,9 +103,27 @@ const ShippingAddress = ({ total, setCartItems }) => {
                   },
                 })}
               />
-              <small className="text-red-600">{errors.phoneNumber?.message}</small>
+              <small className="text-red-600">
+                {errors.phoneNumber?.message}
+              </small>
             </div>
           </div>
+          <div className="">
+            <label className="text-[.95rem]">Email</label>
+            <input
+              type="email"
+              className="p-2 rounded-md outline-none border-2 w-full"
+              {...register("email", {
+                required: "Email is required",
+                pattern: {
+                  value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                  message: "Please enter a valid email address",
+                },
+              })}
+            />
+            <small className="text-red-600">{errors.email?.message}</small>
+          </div>
+
           <div className="">
             <label className="text-[.95rem]">Pincode</label>
             <input
@@ -142,16 +177,7 @@ const ShippingAddress = ({ total, setCartItems }) => {
             <input
               type="text"
               className="p-2 rounded-md outline-none border-2 w-full"
-              {...register("landmark", {
-                required: "Landmark is required",
-                validate: (value) => {
-                  if (value.trim() === "") {
-                    return "Landmark is required";
-                  } else {
-                    return true;
-                  }
-                },
-              })}
+              {...register("landmark")}
             />
             <small className="text-red-600">{errors.landmark?.message}</small>
           </div>

@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import apiClient from "../../../lib/utils";
 import CustomImg from "../../../components/ui/customImg";
+import toast from "react-hot-toast";
 
 const CartItems = ({
   total,
@@ -28,6 +29,7 @@ const CartItems = ({
           ...data,
           cartTotal: cartItems.reduce((a, b) => a + b.price * b.quantity, 0),
         },
+        guestUser: true,
         showToast: true,
       });
       if (res.message.includes("successfully")) {
@@ -55,7 +57,7 @@ const CartItems = ({
               <Link to={`/product-details/${item._id}`}>
                 <CustomImg
                   src={item?.images[0]}
-                  className="h-full aspect-square object-center object-cover rounded-lg"
+                  className="h-full aspect-square  object-center object-cover rounded-lg max-h-[5.75rem]"
                   alt={item.name}
                 />
               </Link>
