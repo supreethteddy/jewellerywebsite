@@ -90,7 +90,7 @@ class APIClient {
       if (config.guestUser) {
         config.headers = {
           ...config.headers,
-          "X-Guest-User": "true",
+          "x-guest-user": "true",
         };
       }
       axiosInstance
