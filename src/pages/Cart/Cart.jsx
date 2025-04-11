@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import cartimage from "../../assets/images/jewellery/pic-1.jpeg";
-import { Minus, Plus, TrashIcon } from "lucide-react";
+import { Minus, Plus, TrashIcon, X } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import CustomImg from "../../components/ui/customImg";
@@ -42,6 +42,8 @@ import { updateCarts } from "../../services/api";
 const Cart = () => {
   const initialCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
   const [cartItems, setCartItems] = useState(initialCartItems);
+  const [showModal, setShowModal] = useState(false);
+
   const navigate = useNavigate();
   let token = localStorage.getItem("key");
 
@@ -79,10 +81,20 @@ const Cart = () => {
     if (token) {
       navigate("/checkout");
     } else {
-      toast.error("Need to log in first.");
-      navigate("/login");
+      setShowModal(true);
     }
   };
+
+  const handleLoginClick = () => {
+    setShowModal(false);
+    navigate("/login");
+  };
+
+  const handleGuestClick = () => {
+    setShowModal(false);
+    navigate("/checkout");
+  };
+
   return (
     <div className="pt-[5.5rem]">
       <Header />
@@ -104,7 +116,7 @@ const Cart = () => {
             </Link>
           </div>
         ) : (
-          <div className="my-10">
+          <div className="my-20 sm:my-16">
             <h2 className="text-xl uppercase">Shopping Cart</h2>
             <div className="grid gap-6 p-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {cartItems.map((item) => (
@@ -185,6 +197,43 @@ const Cart = () => {
           </div>
         )}
       </div>
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full sm:mx-0 mx-2">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-xl font-medium uppercase tracking-wide">
+                Checkout Options
+              </h3>
+              <button
+                onClick={() => setShowModal(false)}
+                className="p-1 hover:bg-gray-100 rounded-full"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <p className="text-gray-600 mb-6">
+              Please sign in to your account or continue as a guest to complete
+              your purchase.
+            </p>
+
+            <div className="flex flex-col gap-3">
+              <button
+                onClick={handleGuestClick}
+                className="btn primary-btn w-full"
+              >
+                Continue as Guest
+              </button>
+              <button
+                onClick={handleLoginClick}
+                className="btn text-white bg-black hover:bg-black/70 uppercase w-full"
+              >
+                Login
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Footer />
     </div>
   );

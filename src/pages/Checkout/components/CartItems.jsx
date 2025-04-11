@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import apiClient from "../../../lib/utils";
 import CustomImg from "../../../components/ui/customImg";
+import toast from "react-hot-toast";
 
 const CartItems = ({
   total,
@@ -22,11 +23,13 @@ const CartItems = ({
 
   const handleFormSubmit = async (data) => {
     try {
+      const token = localStorage.getItem("key");
       const res = await apiClient.post({
         url: "/coupan/apply",
         data: {
           ...data,
           cartTotal: cartItems.reduce((a, b) => a + b.price * b.quantity, 0),
+          guestUser: token ? false : true,
         },
         showToast: true,
       });
@@ -55,7 +58,7 @@ const CartItems = ({
               <Link to={`/product-details/${item._id}`}>
                 <CustomImg
                   src={item?.images[0]}
-                  className="h-full aspect-square object-center object-cover rounded-lg"
+                  className="h-full aspect-square  object-center object-cover rounded-lg max-h-[5.75rem]"
                   alt={item.name}
                 />
               </Link>

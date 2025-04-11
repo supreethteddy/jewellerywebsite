@@ -19,7 +19,12 @@ const axiosInstance = axios.create({
 axiosInstance.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem("key");
-    config.headers.Authorization = `Bearer ${token}`;
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    // else {
+    //   delete config.headers.Authorization;
+    // }
     return config;
   },
   (error) => {
@@ -81,6 +86,13 @@ class APIClient {
       // Check if showToast is not provided and set it to true by default
       const showToast =
         config.showToast !== undefined ? config.showToast : false;
+
+      // if (config.guestUser) {
+      //   config.headers = {
+      //     ...config.headers,
+      //     "x-guest-user": "true",
+      //   };
+      // }
       axiosInstance
         .request(config)
         .then((res) => {
@@ -92,6 +104,9 @@ class APIClient {
           return res;
         })
         .catch((e) => {
+          if (showToast && e?.response?.data?.message) {
+            toast.error(e?.response?.data?.message);
+          }
           reject(e);
         });
     });
