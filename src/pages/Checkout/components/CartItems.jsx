@@ -29,7 +29,7 @@ const CartItems = ({
           ...data,
           cartTotal: cartItems.reduce((a, b) => a + b.price * b.quantity, 0),
         },
-        guestUser: true,
+        guestUser: localStorage.getItem("key") ? false : true,
         showToast: true,
       });
       if (res.message.includes("successfully")) {

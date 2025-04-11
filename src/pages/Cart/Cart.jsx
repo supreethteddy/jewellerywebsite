@@ -219,16 +219,16 @@ const Cart = () => {
 
             <div className="flex flex-col gap-3">
               <button
-                onClick={handleLoginClick}
-                className="btn text-white bg-black hover:bg-black/70 uppercase w-full"
-              >
-                Login
-              </button>
-              <button
                 onClick={handleGuestClick}
                 className="btn primary-btn w-full"
               >
                 Continue as Guest
+              </button>
+              <button
+                onClick={handleLoginClick}
+                className="btn text-white bg-black hover:bg-black/70 uppercase w-full"
+              >
+                Login
               </button>
             </div>
           </div>
