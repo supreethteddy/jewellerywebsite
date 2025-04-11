@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 // import JoinSoulsunPopup from "../../components/JoinSoulsunPopup";
 import Footer from "../../components/Footer";
 import BannerSlider from "./components/BannerSlider";
+import useTrackVisit from "../../hooks/useTrackVisit";
 
 const MustHave = lazy(() => import("./components/MustHave"));
 // const GetTheLook = lazy(() => import("./components/GetTheLook"));
@@ -15,6 +16,7 @@ const SoulsunCollection = lazy(() => import("./components/SoulsunCollection"));
 const Reviews = lazy(() => import("../../components/Reviews"));
 
 const Home = () => {
+  useTrackVisit();
   return (
     <div className="pt-[5rem]">
       <Header />
@@ -36,7 +38,6 @@ const Home = () => {
         <MustHave />
       </section>
       <section className="w-full relative">
-        
         <div className="pb-[4rem] max-w-4xl mx-auto">
           <div
             data-aos="fade-up"

@@ -8,6 +8,7 @@ import SalesTrends from "../components/SalesTrends";
 import ProductPerformance from "../components/ProductPerformance";
 import DeviceStats from "../components/DeviceStats";
 import SearchQueries from "../components/search-queries";
+import SourceAnalytics from "./SourceAnalytics";
 
 const Dashboard = () => {
   return (
@@ -103,6 +104,16 @@ const Dashboard = () => {
           </div>
 
           <SearchQueries />
+        </section>
+        <section>
+          <div className="flex items-center mb-6">
+            <div className="w-1 h-6 bg-green-600 rounded-full mr-3"></div>
+            <h2 className="text-xl font-bold text-gray-800">
+              Traffic Analytics
+            </h2>
+          </div>
+
+          <SourceAnalytics />
         </section>
       </div>
     </div>
