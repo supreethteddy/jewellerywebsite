@@ -23,13 +23,14 @@ const CartItems = ({
 
   const handleFormSubmit = async (data) => {
     try {
+      const token = localStorage.getItem("key");
       const res = await apiClient.post({
         url: "/coupan/apply",
         data: {
           ...data,
           cartTotal: cartItems.reduce((a, b) => a + b.price * b.quantity, 0),
         },
-        guestUser: localStorage.getItem("key") ? false : true,
+        guestUser: token ? false : true,
         showToast: true,
       });
       if (res.message.includes("successfully")) {
