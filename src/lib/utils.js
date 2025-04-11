@@ -99,6 +99,9 @@ class APIClient {
           return res;
         })
         .catch((e) => {
+          if (showToast && e?.response?.data?.message) {
+            toast.error(e?.response?.data?.message);
+          }
           reject(e);
         });
     });
