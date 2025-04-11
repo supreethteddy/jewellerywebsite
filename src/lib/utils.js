@@ -87,12 +87,12 @@ class APIClient {
       const showToast =
         config.showToast !== undefined ? config.showToast : false;
 
-      if (config.guestUser) {
-        config.headers = {
-          ...config.headers,
-          "x-guest-user": "true",
-        };
-      }
+      // if (config.guestUser) {
+      //   config.headers = {
+      //     ...config.headers,
+      //     "x-guest-user": "true",
+      //   };
+      // }
       axiosInstance
         .request(config)
         .then((res) => {

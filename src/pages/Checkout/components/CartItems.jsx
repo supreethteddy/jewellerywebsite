@@ -29,8 +29,8 @@ const CartItems = ({
         data: {
           ...data,
           cartTotal: cartItems.reduce((a, b) => a + b.price * b.quantity, 0),
+          guestUser: token ? false : true,
         },
-        guestUser: token ? false : true,
         showToast: true,
       });
       if (res.message.includes("successfully")) {
