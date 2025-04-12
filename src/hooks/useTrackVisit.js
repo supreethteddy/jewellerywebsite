@@ -11,7 +11,7 @@ const useTrackVisit = () => {
 
     if (source || medium || campaign) {
       api
-        .post("/analytics/track-visit", {
+        .post("/analytics/trackdata", {
           source,
           medium,
           campaign,

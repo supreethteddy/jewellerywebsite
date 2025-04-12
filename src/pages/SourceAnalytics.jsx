@@ -72,7 +72,7 @@ const SourceAnalytics = () => {
     if (filters.startDate) params.append("startDate", filters.startDate);
     if (filters.endDate) params.append("endDate", filters.endDate);
 
-    const res = await api.get(`/analytics/track-visit?${params.toString()}`);
+    const res = await api.get(`/analytics/trackdata?${params.toString()}`);
     return res.data;
   };
 
