@@ -19,6 +19,7 @@ import apiClient from "../../lib/utils";
 import Skeleton from "../../components/ui/skeleton";
 import CustomImg from "../../components/ui/customImg";
 import { addProductView, updateCarts } from "../../services/api";
+import { trackFBEvent } from "../../lib/fbPixel";
 
 // const productData = {
 //   name: "Sirena Hoops",
@@ -77,11 +78,23 @@ const ProductDetails = () => {
         setEaringsItems(res3?.products);
         const itemExistInCart = cartData.find((item) => item.id === productId);
         console.log(res);
-        setProductDetails({
+        const productData = {
           ...res?.product,
           isInCart: Boolean(itemExistInCart),
-        });
+        };
+        
+        setProductDetails(productData);
         await addProductView(productId);
+        
+        // Track ViewContent event for Facebook Pixel
+        trackFBEvent('ViewContent', {
+          content_name: productData.name,
+          content_category: productData.category,
+          content_ids: [productId],
+          content_type: 'product',
+          value: productData.price,
+          currency: 'INR'
+        });
       } catch (error) {
         console.log(error);
         console.log(error?.data?.message);

@@ -12,6 +12,8 @@ import { lazy, Suspense } from "react";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
+import FacebookPixelTracker from "./components/FacebookPixelTracker";
+import FacebookPixelTest from "./components/FacebookPixelTest";
 
 // Corrected import paths for Login and Signup components
 import Login from "./pages/Login/Login";
@@ -67,6 +69,7 @@ function App() {
         <Suspense fallback={<LoadingSpinner />}>
           <Router>
             <ScrollToTop />
+            <FacebookPixelTracker />
             <Toaster
               toastOptions={{
                 style: {
@@ -151,6 +154,8 @@ function App() {
               {/* Catch-all route for 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
+            {/* Temporary test component for Facebook Pixel */}
+            {/* <FacebookPixelTest /> */}
           </Router>
         </Suspense>
       </QueryClientProvider>

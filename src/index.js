@@ -7,6 +7,10 @@ import "react-modern-drawer/dist/index.css";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { QueryClient } from "@tanstack/react-query"; // Correct import
+import { initFacebookPixel, trackPageView } from "./lib/fbPixel";
+
+// Initialize Facebook Pixel
+initFacebookPixel();
 
 // Create an instance of QueryClient
 const queryClient = new QueryClient();
@@ -18,7 +22,7 @@ root.render(
       {" "}
       {/* Pass the instance */}
       <App />
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   </React.StrictMode>
 );

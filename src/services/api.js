@@ -130,3 +130,14 @@ export const getSearchQuerys = async (from, to) => {
   );
   return response.data;
 };
+
+// Facebook Conversion API
+export const sendFacebookConversionEvent = async (eventData) => {
+  try {
+    const response = await api.post("/facebook-conversion", eventData);
+    return response.data;
+  } catch (error) {
+    console.error("Error sending Facebook Conversion event:", error);
+    return { success: false, error: error.message };
+  }
+};
