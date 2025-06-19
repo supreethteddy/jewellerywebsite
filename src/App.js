@@ -69,7 +69,7 @@ function App() {
         <Suspense fallback={<LoadingSpinner />}>
           <Router>
             <ScrollToTop />
-            <FacebookPixelTracker />
+            {/* <FacebookPixelTracker /> */}
             <Toaster
               toastOptions={{
                 style: {
