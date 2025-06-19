@@ -56,6 +56,22 @@ export const displayRazorpay = async (amount, reset, setCartItems,data) => {
         const res = await apiClient.post({url:`/shipping`, data:{...data, products:cartItems}})
         if(res.shipping){
           console.log("Payment successful", response);
+          
+          // Track "Purchase" event with Facebook Pixel
+          if (typeof window.fbq === 'function') {
+            // Extract product IDs and calculate total value
+            const contentIds = cartItems.map(item => item._id || item.id);
+            const totalValue = cartItems.reduce((total, item) => total + (item.price * (item.quantity || 1)), 0);
+            
+            window.fbq('track', 'Purchase', {
+              content_ids: contentIds,
+              content_type: 'product',
+              value: totalValue,
+              currency: 'INR',
+              num_items: cartItems.length
+            });
+          }
+          
           localStorage.removeItem('cartItems');
           setCartItems([]);
           reset();
