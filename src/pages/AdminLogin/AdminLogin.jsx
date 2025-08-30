@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import apiClient from "../../lib/utils";
-import { Eye, EyeOff } from "lucide-react";
+// Icons removed for simplicity
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -83,7 +83,7 @@ const AdminLogin = () => {
               })}
             />
             <div onClick={togglePasswordVisibility} className="cursor-pointer text-[#686767]">
-              {showPassword ? <Eye color="#686767"/> : <EyeOff color="#686767"/>}
+                              {showPassword ? <span className="text-[#686767]">👁</span> : <span className="text-[#686767]">👁‍🗨</span>}
             </div>
             {/* <span className="min-w-[128px] text-[#6A6A6A]">
               {" "}

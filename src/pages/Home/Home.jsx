@@ -1,6 +1,6 @@
 import React, { lazy } from "react";
 import Header from "../../components/Header";
-import { Star } from "lucide-react";
+// Icons removed for simplicity
 import earingsPic from "../../assets/images/home_page/earrings.jpg";
 import ringsPic from "../../assets/images/home_page/rings.jpg";
 import necklacePic from "../../assets/images/home_page/necklace.jpg";
@@ -30,7 +30,7 @@ const Home = () => {
           {Array(5)
             .fill(0)
             .map((_, i) => (
-              <Star key={i} fill="#DEA821" size={20} stroke="0" />
+                              <span key={i} className="text-yellow-500 text-xl">★</span>
             ))}
         </div>
       </section>

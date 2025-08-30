@@ -7,7 +7,7 @@ import {
   smHeaderLinks,
 } from "../constant";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Search, ShoppingCart, User, X } from "lucide-react";
+import { BiSearch, BiCart, BiUser, BiX } from "react-icons/bi";
 import Drawer from "react-modern-drawer";
 import { Divide as Hamburger } from "hamburger-react";
 import DropDown from "./DropDown";
@@ -134,14 +134,14 @@ const Header = () => {
             </Link>
           ) : (
             // <Link to="/profile" title="Profile">
-            <DropDown head={<User size={20} />} content={menu} />
+            <DropDown head={<BiUser size={20} />} content={menu} />
             // </Link>
           )}
           <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
-            <Search size={20} />
+            <BiSearch size={20} />
           </button>
           <Link to="/cart" title="My Cart" className="relative">
-            <ShoppingCart size={20} />
+            <BiCart size={20} />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2  w-4 h-4 text-xs font-bold text-white bg-red-500 rounded-full flex items-center justify-center">
                 {cartCount}
@@ -170,7 +170,7 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
             className="text-black text-[2.2rem]"
           >
-            <X size={30} />
+            <BiX size={30} />
           </button>
         </div>
         <div className="flex flex-col gap-6">
@@ -203,7 +203,7 @@ const Header = () => {
                 value={query}
               />
               <button onClick={() => setIsSearchOpen(false)}>
-                <X size={20} />
+                <BiX size={20} />
               </button>
             </div>
             {filteredItems.length > 0 && (

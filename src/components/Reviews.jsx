@@ -1,4 +1,4 @@
-import { Star } from "lucide-react";
+// Icons removed for simplicity
 import React from "react";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 
@@ -11,7 +11,7 @@ const Reviews = () => {
           {Array(5)
             .fill(0)
             .map((_, i) => (
-              <Star key={i} fill="#DEA821" size={20} stroke="0" />
+                              <span key={i} className="text-yellow-500 text-xl">★</span>
             ))}
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { Plus, Search } from "lucide-react";
+// Icons removed for simplicity
 import React, { useEffect, useState } from "react";
 import DropDown from "./components/Dropdown";
 import ProductsTable from "./components/ProductsTable";
@@ -58,7 +58,7 @@ const ProductsPage = () => {
                 onClick={() => setShowAddCategoryModal(true)}
                 className="btn1 bg-primary text-white hover:bg-primary/90"
               >
-                <Plus strokeWidth={3} size={17} /> <span>Add Category</span>
+                <span className="text-xl">+</span> <span>Add Category</span>
               </button> */}
               <button
                 onClick={() =>
@@ -66,7 +66,7 @@ const ProductsPage = () => {
                 }
                 className="btn1 bg-primary text-white hover:bg-primary/90"
               >
-                <Plus strokeWidth={3} size={17} /> <span>Add Product</span>
+                <span className="text-xl">+</span> <span>Add Product</span>
               </button>
             </div>
           </div>
@@ -86,7 +86,7 @@ const ProductsPage = () => {
           </div> */}
           <div className="flex sm:flex-row flex-col sm:items-center gap-3">
             <div className="flex items-center gap-2 p-2 rounded border">
-              <Search size={20} className="text-gray-500" />
+                              <span className="text-gray-500">🔍</span>
               <input
                 type="text"
                 placeholder="Search..."

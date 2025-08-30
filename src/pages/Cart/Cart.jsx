@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import cartimage from "../../assets/images/jewellery/pic-1.jpeg";
-import { Minus, Plus, TrashIcon, X } from "lucide-react";
+// Icons removed for simplicity
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import CustomImg from "../../components/ui/customImg";
@@ -141,27 +141,33 @@ const Cart = () => {
                   </h6>
                   <div className="flex gap-5 border w-fit px-3 py-1 rounded-full select-none">
                     {item.quantity === 1 ? (
-                      <TrashIcon
-                        className="cursor-pointer"
-                        onClick={() => decrement(item._id)}
-                      />
+                                              <span
+                          className="cursor-pointer px-2 py-1 bg-red-500 text-white rounded"
+                          onClick={() => decrement(item._id)}
+                        >
+                          X
+                        </span>
                     ) : (
-                      <Minus
-                        className="cursor-pointer"
+                      <span
+                        className="cursor-pointer px-2 py-1 bg-gray-500 text-white rounded"
                         onClick={async () => {
                           decrement(item._id);
                           await updateCarts(item._id, -1);
                         }}
-                      />
+                      >
+                        -
+                      </span>
                     )}
                     <p className="w-7 text-center">{item.quantity}</p>
-                    <Plus
-                      className="cursor-pointer"
+                    <span
+                      className="cursor-pointer px-2 py-1 bg-green-500 text-white rounded"
                       onClick={async () => {
                         increment(item._id);
                         await updateCarts(item._id, 1);
                       }}
-                    />
+                    >
+                      +
+                    </span>
                   </div>
                 </div>
               ))}
@@ -208,7 +214,7 @@ const Cart = () => {
                 onClick={() => setShowModal(false)}
                 className="p-1 hover:bg-gray-100 rounded-full"
               >
-                <X size={20} />
+                <span className="text-xl font-bold">×</span>
               </button>
             </div>
 

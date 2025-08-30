@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+// Icons removed for simplicity
 
 const Dropdown = ({ label, onChange, options, selected }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,11 +18,13 @@ const Dropdown = ({ label, onChange, options, selected }) => {
           className="w-full rounded px-3 py-2 h-full bg-white border flex items-center justify-between hover:bg-gray-50"
         >
           <span className="text-gray-700">{selected}</span>
-          <ChevronDown
-            className={`w-4 h-4 transition-transform duration-200 ${
-              isOpen ? "transform rotate-180" : ""
-            }`}
-          />
+                  <span
+          className={`w-4 h-4 transition-transform duration-200 ${
+            isOpen ? "transform rotate-180" : ""
+          }`}
+        >
+          ▼
+        </span>
         </button>
       </div>
       {isOpen && (

@@ -1,4 +1,4 @@
-import { X } from "lucide-react";
+// Icons removed for simplicity
 import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 
@@ -36,7 +36,7 @@ const Modal = ({ isOpen, onClose, title, children }) => {
             onClick={onClose}
             className="p-1 rounded-full hover:bg-gray-100"
           >
-            <X className="w-5 h-5" />
+                            <span className="text-xl font-bold">×</span>
           </button>
         </div>
 

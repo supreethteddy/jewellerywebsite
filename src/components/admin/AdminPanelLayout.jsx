@@ -1,44 +1,36 @@
 import React from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import {
-  Home,
-  LogOut,
-  PackageSearch,
-  Shapes,
-  ShoppingCart,
-  StickyNote,
-  Laptop2,
-} from "lucide-react";
+// Icons removed for simplicity
 import { Link, useLocation } from "react-router-dom";
 
 const pages = [
   {
-    icon: Laptop2,
+    icon: "💻",
     name: "Site Overview",
     path: "/admin",
   },
   {
-    icon: Home,
+    icon: "🏠",
     name: "Dashboard",
     path: "/admin/dashboard",
   },
   {
-    icon: PackageSearch,
+    icon: "📦",
     name: "Products",
     path: "/admin/products",
   },
   {
-    icon: ShoppingCart,
+    icon: "🛒",
     name: "Orders",
     path: "/admin/orders",
   },
   {
-    icon: StickyNote,
+    icon: "📝",
     name: "Coupons",
     path: "/admin/coupons",
   },
   {
-    icon: Shapes,
+    icon: "📊",
     name: "Reports",
     path: "/admin/reports",
   },
@@ -70,14 +62,15 @@ const AdminPanelLayout = () => {
                         pathname === page.path && "bg-[#D7EDFF]"
                       } text-black flex !no-underline items-center gap-2 w-full py-[.5rem] px-[1.5rem] rounded-md`}
                     >
-                      <page.icon
-                        size={20}
-                        className={`${
+                      <span
+                        className={`text-xl ${
                           pathname === page.path
                             ? "text-[#4094F7]"
                             : "text-gray-600"
                         }`}
-                      />
+                      >
+                        {page.icon}
+                      </span>
                       <span className="!no-underline">{page.name}</span>
                     </a>
                   ))}
@@ -91,7 +84,7 @@ const AdminPanelLayout = () => {
                   navigate("/admin/login");
                 }}
               >
-                <LogOut size={20} className="text-gray-600" />
+                <span className="text-gray-600">🚪</span>
                 <span>Logout</span>
               </button>
             </div>

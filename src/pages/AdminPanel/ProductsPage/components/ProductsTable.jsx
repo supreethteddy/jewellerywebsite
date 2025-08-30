@@ -1,4 +1,4 @@
-import { PenLine, Trash2 } from "lucide-react";
+// Icons removed for simplicity
 // import { earringsItems, necklaceItems } from "../../../../constant";
 import dayjs from "dayjs";
 import apiClient from "../../../../lib/utils";
@@ -91,12 +91,12 @@ const ProductsTable = ({ showEditFormModal ,allProducts, getAllProducts, isLoadi
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                     <div className="flex space-x-2">
                       <button className="text-gray-400 hover:text-gray-500">
-                        <Trash2 className="w-5 h-5" onClick={()=>handleDelete(item._id)}/>
+                        <span className="text-red-500 cursor-pointer" onClick={()=>handleDelete(item._id)}>🗑</span>
                       </button>
                       <button
                         className="text-gray-400 hover:text-gray-500"
                       >
-                        <PenLine className="w-5 h-5" onClick={()=>showEditFormModal({status:true, defaultValues:item})}/>
+                        <span className="text-blue-500 cursor-pointer" onClick={()=>showEditFormModal({status:true, defaultValues:item})}>✏</span>
                       </button>
                     </div>
                   </td>
@@ -130,10 +130,10 @@ const ProductsTable = ({ showEditFormModal ,allProducts, getAllProducts, isLoadi
               </div>
               <div className="flex space-x-2">
                 <button className="text-gray-400 hover:text-gray-500">
-                  <Trash2 className="w-5 h-5" onClick={()=>handleDelete(item._id)}/>
+                  <span className="text-red-500 cursor-pointer" onClick={()=>handleDelete(item._id)}>🗑</span>
                 </button>
                 <button className="text-gray-400 hover:text-gray-500">
-                  <PenLine className="w-5 h-5" onClick={()=>showEditFormModal({status:true, defaultValues:item})}/>
+                  <span className="text-blue-500 cursor-pointer" onClick={()=>showEditFormModal({status:true, defaultValues:item})}>✏</span>
                 </button>
               </div>
             </div>

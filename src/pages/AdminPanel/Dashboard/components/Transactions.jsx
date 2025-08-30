@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+// Icons removed for simplicity
 import React, { useEffect, useState } from "react";
 import apiClient from "../../../../lib/utils";
 import dayjs from "dayjs";
@@ -55,7 +55,7 @@ const Transactions = () => {
         <div className="flex items-center justify-between gap-5 pb-3">
           <p className="font-semibold pt-3 pb-2 px-3">Transactions</p>
           <button className="text-secondary hover:text-primary flex items-center gap-1 p-2 text-sm">
-            See All Transactions <ChevronRight size={14} />
+            See All Transactions <span className="text-sm">→</span>
           </button>
         </div>
         <hr />

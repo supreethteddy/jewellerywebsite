@@ -13,7 +13,7 @@ import { Autoplay, Pagination, Navigation, Mousewheel } from "swiper/modules";
 
 // import { earringsItems, necklaceItems, ringsItems } from "../../constant";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { ChevronUp } from "lucide-react";
+// Icons removed for simplicity
 import toast from "react-hot-toast";
 import apiClient from "../../lib/utils";
 import Skeleton from "../../components/ui/skeleton";
@@ -275,12 +275,13 @@ const ProductDetails = () => {
                       aria-controls={`accordion-color-body-${index + 1}`}
                     >
                       <span>{item.title.toUpperCase()}</span>
-                      <ChevronUp
-                        strokeWidth={1.2}
+                      <span
                         className={`transform ${
                           activeIndex === index ? "rotate-180" : "rotate-90"
                         } shrink-0`}
-                      />
+                      >
+                        ▼
+                      </span>
                     </button>
                   </h2>
                   <div

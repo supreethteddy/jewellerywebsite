@@ -1,4 +1,4 @@
-import { X } from "lucide-react";
+// Icons removed for simplicity
 import React, { useState } from "react";
 
 const JoinSoulsunPopup = ({ className }) => {
@@ -10,10 +10,12 @@ const JoinSoulsunPopup = ({ className }) => {
     <div
       className={`${className} hidden lg:block bg-[#1C1B1B] z-20 px-4 pt-7 pb-4 absolute text-white max-w-xs`}
     >
-      <X
-        onClick={() => setShow(false)}
-        className="absolute top-2 right-2 cursor-pointer"
-      />
+                      <span
+          onClick={() => setShow(false)}
+          className="absolute top-2 right-2 cursor-pointer text-xl font-bold"
+        >
+          ×
+        </span>
       <h3 className="tracking-widest uppercase text-center">
         Join club <br />
         soulsun

@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { LoaderCircle, PenLine, Trash2 } from "lucide-react";
+// Icons removed for simplicity
 import React from "react";
 import apiClient from "../../../../lib/utils";
 
@@ -93,13 +93,13 @@ const CouponsTable = ({
                       className="text-gray-400 hover:text-gray-500"
                       onClick={() => handleDelete(coupon._id)}
                     >
-                      <Trash2 className="w-5 h-5" />
+                      <span className="text-red-500">🗑</span>
                     </button>
                     <button
                       className="text-gray-400 hover:text-gray-500"
                       onClick={() => handleEdit(coupon)}
                     >
-                      <PenLine className="w-5 h-5" />
+                      <span className="text-blue-500">✏</span>
                     </button>
                   </div>
                 </td>
@@ -124,13 +124,13 @@ const CouponsTable = ({
                   className="text-gray-400 hover:text-gray-500"
                   onClick={() => handleDelete(coupon._id)}
                 >
-                  <Trash2 className="w-5 h-5" />
+                  <span className="text-red-500">🗑</span>
                 </button>
                 <button
                   className="text-gray-400 hover:text-gray-500"
                   onClick={() => handleEdit(coupon)}
                 >
-                  <PenLine className="w-5 h-5" />
+                  <span className="text-blue-500">✏</span>
                 </button>
               </div>
             </div>

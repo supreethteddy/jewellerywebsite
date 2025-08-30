@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Plus, Search } from "lucide-react";
+// Icons removed for simplicity
 import CouponsTable from "./components/CouponsTable";
 import AddCouponForm from "./components/AddCouponForm";
 import apiClient from "../../../lib/utils";
@@ -52,7 +52,7 @@ const Coupons = () => {
                 onClick={() => setShowAddCouponForm(true)}
                 className="btn1 bg-primary text-white hover:bg-primary/90 hover:-translate-y-1"
               >
-                <Plus strokeWidth={3} size={17} /> Add Coupon
+                <span className="text-xl">+</span> Add Coupon
               </button>
             )}
           </div>
@@ -61,7 +61,7 @@ const Coupons = () => {
           {!showAddCouponForm && (
             <div className="flex sm:flex-row flex-col sm:items-center gap-3">
               <div className="flex items-center gap-2 p-2 rounded border">
-                <Search size={20} className="text-gray-500" />
+                <span className="text-gray-500">🔍</span>
                 <input
                   type="text"
                   placeholder="Search Coupon"

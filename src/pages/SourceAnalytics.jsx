@@ -11,7 +11,7 @@ import {
 } from "recharts";
 import { useQuery } from "@tanstack/react-query";
 import { api } from "../services/api";
-import { InfoIcon, XIcon, Link2Icon, AlertCircleIcon } from "lucide-react";
+// Icons removed for simplicity
 
 const SourceAnalytics = () => {
   const [page, setPage] = useState(1);
@@ -133,7 +133,7 @@ const SourceAnalytics = () => {
             onClick={() => setShowModal(true)}
             className="flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
           >
-            <InfoIcon size={16} />
+                            <span className="text-blue-500">ℹ</span>
             How to use UTM tracking
           </button>
         </div>
@@ -281,7 +281,7 @@ const SourceAnalytics = () => {
         ) : isError ? (
           <div className="flex justify-center items-center h-64 bg-white rounded-lg shadow-sm border border-gray-100">
             <div className="text-red-500 flex items-center gap-2">
-              <AlertCircleIcon size={20} />
+                              <span className="text-red-500">⚠</span>
               Error loading data: {error?.message || "Unknown error"}
             </div>
           </div>
@@ -542,14 +542,14 @@ const SourceAnalytics = () => {
           <div className="bg-white rounded-lg shadow-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto">
             <div className="flex justify-between items-center p-5 border-b">
               <h3 className="text-xl font-semibold text-gray-800 flex items-center gap-2">
-                <InfoIcon size={20} className="text-blue-500" />
+                <span className="text-blue-500 text-xl">ℹ</span>
                 How to Track Visitors Using UTM Links
               </h3>
               <button
                 onClick={() => setShowModal(false)}
                 className="text-gray-500 hover:text-gray-700 transition-colors"
               >
-                <XIcon size={20} />
+                <span className="text-xl font-bold">×</span>
               </button>
             </div>
 
@@ -581,10 +581,7 @@ const SourceAnalytics = () => {
                   Just add UTM parameters to your URL like this:
                 </p>
                 <div className="bg-gray-50 p-3 rounded border border-gray-200 font-mono text-sm text-gray-700 flex items-center gap-2 overflow-x-auto">
-                  <Link2Icon
-                    size={16}
-                    className="text-gray-400 flex-shrink-0"
-                  />
+                                  <span className="text-gray-400 flex-shrink-0">🔗</span>
                   <span>
                     https://jewello.in/?utm_source=SOURCE&utm_medium=MEDIUM&utm_campaign=CAMPAIGN
                   </span>

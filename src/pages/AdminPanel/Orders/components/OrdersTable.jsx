@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { PenLine } from "lucide-react";
+// Icons removed for simplicity
 import React, { useState } from "react";
 import Modal from "../../../../components/Modal";
 import apiClient from "../../../../lib/utils";
@@ -121,7 +121,7 @@ const OrdersTable = ({ allorders, getAllCategories, isLoading }) => {
                         });
                       }}
                     >
-                      <PenLine className="w-5 h-5" />
+                      <span className="text-blue-500">✏</span>
                     </button>
                   </div>
                 </td>
@@ -166,7 +166,7 @@ const OrdersTable = ({ allorders, getAllCategories, isLoading }) => {
                     setOrder({ id: order?._id, status: order?.isDelivered });
                   }}
                 >
-                  <PenLine className="w-5 h-5" />
+                  <span className="text-blue-500">✏</span>
                 </button>
               </div>
             </div>

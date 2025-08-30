@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "../../lib/utils";
-import { Star } from "lucide-react";
+// Icons removed for simplicity
 
 export const InfiniteMovingCards = ({
   items,
@@ -87,7 +87,7 @@ export const InfiniteMovingCards = ({
                     {Array(item.rating)
                       .fill(0)
                       .map((_, i) => (
-                        <Star key={i} fill="#DEA821" size={15} stroke="0" />
+                        <span key={i} className="text-yellow-500 text-lg">★</span>
                       ))}
                   </div>
                 </div>

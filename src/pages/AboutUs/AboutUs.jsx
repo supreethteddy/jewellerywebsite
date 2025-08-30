@@ -3,7 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import img1 from "../../assets/images/aboutus/image-1.jpg";
 import img2 from "../../assets/images/aboutus/image-2.jpg";
-import { Star } from "lucide-react";
+// Icons removed for simplicity
 import img3 from "../../assets/images/aboutus/image-3.jpg";
 import img5 from "../../assets/images/aboutus/image-5.jpg";
 
@@ -146,7 +146,7 @@ const AboutUs = () => {
           {Array(5)
             .fill(0)
             .map((_, i) => (
-              <Star key={i} fill="#DEA821" size={20} stroke="0" />
+                              <span key={i} className="text-yellow-500 text-xl">★</span>
             ))}
         </div>
       </div>

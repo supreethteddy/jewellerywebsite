@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import OrdersTable from "./components/OrdersTable";
-import { ArrowLeft, ArrowRight, Search } from "lucide-react";
+// Icons removed for simplicity
 import Dropdown from "./components/Dropdown";
 import apiClient from "../../../lib/utils";
 
@@ -51,7 +51,7 @@ const Orders = () => {
 
           <div className="flex sm:flex-row flex-col sm:items-center gap-3">
             <div className="flex items-center gap-2 p-2 rounded border">
-              <Search size={20} className="text-gray-500" />
+                              <span className="text-gray-500">🔍</span>
               <input
                 type="text"
                 placeholder="Search Order..."
@@ -95,7 +95,7 @@ const Orders = () => {
             }`}
             onClick={handlePrevious}
           >
-            <ArrowLeft size={16} />
+                            <span className="text-sm">←</span>
             Previous
           </button>
           <button
@@ -108,8 +108,8 @@ const Orders = () => {
             onClick={handleNext}
             disabled={!allOrders?.pagination?.hasNextPage}
           >
-            Next
-            <ArrowRight size={16} />
+                          Next
+              <span className="text-sm">→</span>
           </button>
         </div>
       </div>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Trash2 } from "lucide-react";
+// Icons removed for simplicity
 import apiClient from "../../../lib/utils";
 import CustomImg from "../../../components/ui/customImg";
 
@@ -54,7 +54,7 @@ const Wishlist = () => {
                   onClick={() => removeFromWishList(item?._id)}
                   className="px-3 py-2 border rounded-full border-primary"
                 >
-                  <Trash2 />
+                                      <span className="text-red-500">🗑</span>
                 </button>
               </div>
             </div>

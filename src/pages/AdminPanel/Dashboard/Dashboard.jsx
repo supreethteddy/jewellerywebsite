@@ -1,8 +1,4 @@
-import {
-  // FilePlus2,
-  LogOut,
-  Search,
-} from "lucide-react";
+// Icons removed for simplicity
 import React, { useEffect, useState } from "react";
 import LineChart from "./components/LineChart";
 import "./Dashboard.css";
@@ -32,7 +28,7 @@ const Dashboard = () => {
     <div className="w-full relative">
       <div className="md:ml-[12rem] bg-white fixed top-0 left-0 w-full md:max-w-[calc(100%-12rem)] p-4 flex justify-between items-center gap-4">
         <div className="flex items-center gap-2 p-2 rounded-full border">
-          <Search size={20} className="text-gray-500" />
+          <span className="text-gray-500">🔍</span>
           <input
             type="text"
             placeholder="Search..."
@@ -48,7 +44,7 @@ const Dashboard = () => {
               navigate("/admin/login");
             }}
           >
-            <LogOut size={20} className="text-gray-600" />
+            <span className="text-gray-600">🚪</span>
             <span>Logout</span>
           </button>
         </div>
