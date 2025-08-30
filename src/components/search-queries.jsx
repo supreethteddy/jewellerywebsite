@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getSearchQuerys } from "../services/api";
 // Import specific functions from date-fns to avoid conflicts
 import format from "date-fns/format";

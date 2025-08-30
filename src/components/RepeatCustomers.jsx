@@ -1,5 +1,5 @@
 import React from "react";
-import { useQuery } from "react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getRepeatCustomerMetrics, getLoyalCustomers } from "../services/api";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from "recharts";
 import LoadingSpinner from "./LoadingSpinner.jsx";

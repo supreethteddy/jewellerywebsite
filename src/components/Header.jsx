@@ -7,7 +7,7 @@ import {
   smHeaderLinks,
 } from "../constant";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Search, ShoppingCart, UserRound, X } from "lucide-react";
+import { Search, ShoppingCart, User, X } from "lucide-react";
 import Drawer from "react-modern-drawer";
 import { Divide as Hamburger } from "hamburger-react";
 import DropDown from "./DropDown";
@@ -134,7 +134,7 @@ const Header = () => {
             </Link>
           ) : (
             // <Link to="/profile" title="Profile">
-            <DropDown head={<UserRound size={20} />} content={menu} />
+            <DropDown head={<User size={20} />} content={menu} />
             // </Link>
           )}
           <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
