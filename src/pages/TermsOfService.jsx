@@ -142,15 +142,6 @@ const TermsOfService = () => {
                   support@jewello.in
                 </a>
               </li>
-              <li>
-                Phone:{" "}
-                <a
-                  href="tel:+919876543210"
-                  className="text-blue-600 hover:underline"
-                >
-                  +91 98765 43210
-                </a>
-              </li>
             </ul>
 
             <h2 className="text-xl mt-8 mb-4">10. Changes to Terms</h2>
