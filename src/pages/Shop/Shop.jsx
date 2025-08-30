@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 // import SortDropdown from "./components/SortDropdown";
-// import { earringsItems, necklaceItems, ringsItems } from "../../constant";
+import { earringsItems, necklaceItems, ringsItems, braceletItems } from "../../constants/products";
 import { Link, useParams } from "react-router-dom";
 import apiClient from "../../lib/utils";
 import CustomImg from "../../components/ui/customImg";
@@ -43,22 +43,23 @@ const Shop = () => {
   let heading, subHeading;
 
   useEffect(() => {
-    const getAllProducts = async () => {
-      try {
-        setIsPending(true);
-        const res = await apiClient.get({
-          url: `/products/byCategory/${category}`,
-        });
-        const res2 = await apiClient.get({ url: `/products/byCategory/rings` });
-        setAllProducts(res?.products);
-        setRings(res2?.products);
-      } catch (error) {
-        console.log(error?.data?.message || "error");
-      } finally {
-        setIsPending(false);
-      }
-    };
-    getAllProducts();
+    // Use local product data instead of API calls
+    let products = [];
+    let ringsData = ringsItems;
+    
+    if (category === "earrings") {
+      products = earringsItems;
+    } else if (category === "rings") {
+      products = ringsItems;
+    } else if (category === "necklaces") {
+      products = necklaceItems;
+    } else {
+      products = braceletItems;
+    }
+    
+    setAllProducts(products);
+    setRings(ringsData);
+    setIsPending(false);
   }, [category]);
 
   if (category === "earrings") {
@@ -73,7 +74,11 @@ const Shop = () => {
     heading = necklaceData.heading;
     subHeading = necklaceData.subHeading;
     // products = necklaceData.products;
-  }else{
+  } else if (category === "bracelets") {
+    heading = braceletData.heading;
+    subHeading = braceletData.subHeading;
+    // products = braceletData.products;
+  } else {
     heading = braceletData.heading;
     subHeading = braceletData.subHeading;
     // products = braceletData.products;
@@ -188,12 +193,12 @@ const Shop = () => {
                       alt={item?.name}
                       loading="lazy"
                     />
-                    <img
-                      src={item?.images[1]}
-                      className="group-hover:opacity-100 opacity-100 absolute h-full w-[95%] translate-x-[105%] group-hover:translate-x-0 duration-300 object-cover"
-                      alt={item?.name}
-                      loading="lazy"
-                    />
+                      <CustomImg
+                        src={item?.images[1]}
+                        className="group-hover:opacity-100 opacity-100 absolute h-full w-[95%] translate-x-[105%] group-hover:translate-x-0 duration-300 object-cover"
+                        alt={item?.name}
+                        loading="lazy"
+                      />
                   </Link>
                   <div className="text-center">
                     <p className="uppercase desc mt-3 text-[.9rem]">

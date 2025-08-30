@@ -21,7 +21,7 @@ export const headerLinks = [
   },
   {
     name: "Bracelets",
-    path: "/shop/Cuffs, Bracelets & Anklets",
+    path: "/shop/bracelets",
   },
   {
     name: "About",

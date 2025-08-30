@@ -1,0 +1,83 @@
+[
+  {
+    "name": "Zariya Orbit",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741110529/products/gpwjztpn3kswpvczp333.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741110529/products/d8x262evvxsbyl4cgijm.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Chandrika Orbit",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741114635/products/xsrmdlzstopk7nizlble.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741114634/products/xxpcepavgfkgi0gpjwyi.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Kyra Crown",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741114730/products/odq5fz7u9mzv2m2optm4.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741114729/products/jsfy5ezuufasxt8x56fc.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Aheli Spark",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741114864/products/fvyuxujew5tznmywcqig.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741114862/products/bhmraoblgbtfp9s662xx.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Aahana Crest",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115314/products/svr5iusge1mlgijlsadh.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115314/products/pidm0xr5g3jwxe4cx6fs.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Vanya Luxe",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115360/products/o34aswra5h6sgeuaylpb.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115360/products/vrwpzfndit5dzpq5mhvy.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Eka Sphere",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115476/products/ooy9crg2cdhltbet1zkz.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115477/products/rqolsja7vgr8fsjd6far.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Shakti Coil",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115516/products/tdxkyws69ykd60k1ibnd.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115515/products/po0ptd9qs5rwbj8i9lzj.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Raysen Band",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115546/products/ekinz9ucd5opfdi3yelr.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115546/products/kwvsvabxngcvtr9yzimd.jpg"
+    ],
+    "isBestSeller": false
+  }
+]

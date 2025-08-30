@@ -1,0 +1,110 @@
+[
+  {
+    "name": "Nira Glow",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741107995/products/lleddz7vjubb9tlolp5q.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741107993/products/smmoxaqgjpbqckjdvtem.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Noorika",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741108618/products/nz0rjlikexrvms1omxtu.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741108618/products/biu3y8c6bqctunydpryd.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Sanskriti Links",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741108935/products/bbjyrrmeharcovsx8tnb.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741108935/products/kdmyedjpjvooxat95fjh.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Indira Luxe",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741109141/products/syujz9upspc5cbekmkfi.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741109140/products/sbgcial31smmmkwgzgne.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Nayra Threads",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112276/products/l08jssusqsigtkriwfqn.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112276/products/vybanl6ealup4dze5y51.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Pratham Glow",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112397/products/skjxfkqypn4bqstnbbsc.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112396/products/sliv8q43qgkezitvyosj.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Amara Cascade",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112496/products/sipwhvbxfy8xtxh3ucxq.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112494/products/wbhtobvd0v6wypba5dis.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Sundara Threads",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112563/products/ffvvupkfmxdxnv0a4aa0.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112562/products/ym5r5n4ziqppoxrfj4ql.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Ziva Luxe",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112605/products/ginbodrseixztcxcchok.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112606/products/ecghghtzdejduz6qsu7q.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Zaira Glow",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112742/products/qccf71kagvx48ew6v4if.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112741/products/un9y7pivagftppzfybdu.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Saanjh Glow",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112789/products/m4xvyv9xk8l9yegxgyhr.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741112788/products/o3aevfq07tqi9xeqmxw6.jpg"
+    ],
+    "isBestSeller": false
+  },
+  {
+    "name": "Trinity Twist",
+    "price": 799,
+    "images": [
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115078/products/wcmllegk6no5hxcm57fu.jpg",
+      "https://res.cloudinary.com/dip7vmhuu/image/upload/v1741115079/products/s9dcsr3m0qly0nj6uxy2.jpg"
+    ],
+    "isBestSeller": false
+  }
+]

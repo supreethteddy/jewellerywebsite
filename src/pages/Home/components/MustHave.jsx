@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { necklaceItems } from "../../../constant";
+import { necklaceItems, earringsItems, ringsItems } from "../../../constants/products";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -10,23 +10,19 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import apiClient from "../../../lib/utils";
 import CustomImg from "../../../components/ui/customImg";
+
 const MustHave = () => {
   const [allProducts, setAllProducts] = useState(null);
 
   useEffect(() => {
-    const getAllProducts = async () => {
-      try {
-        const res = await apiClient.get({
-          url: `/products/list/8`,
-        });
-        setAllProducts(res?.products);
-      } catch (error) {
-        console.log(error?.data?.message || "error");
-      }
-    };
-    getAllProducts();
+    // Use local product data instead of API call
+    const combinedProducts = [
+      ...necklaceItems.slice(0, 3),
+      ...earringsItems.slice(0, 3),
+      ...ringsItems.slice(0, 2)
+    ];
+    setAllProducts(combinedProducts);
   }, []);
   return (
     <div data-aos="fade-up" className="py-[4rem]">
