@@ -19,7 +19,7 @@ import apiClient from "../../lib/utils";
 import Skeleton from "../../components/ui/skeleton";
 import CustomImg from "../../components/ui/customImg";
 import { addProductView, updateCarts } from "../../services/api";
-import { trackFBEvent } from "../../lib/fbPixel";
+
 
 // const productData = {
 //   name: "Sirena Hoops",
@@ -59,7 +59,6 @@ const ProductDetails = () => {
   const [productDetails, setProductDetails] = useState(null);
   const [necklaceItems, setNecklaceItems] = useState(null);
   const [earingsItems, setEaringsItems] = useState(null);
-  const pixelRef = useRef(null);
 
   let cartData = useMemo(
     () => JSON.parse(localStorage.getItem("cartItems")) || [],
@@ -72,18 +71,7 @@ const ProductDetails = () => {
       try {
         const res = await apiClient.get({ url: `/products/${productId}` });
 
-        // Check if fbq is defined before calling it
-        if (typeof window.fbq === "function") {
-          if (!pixelRef.current) {
-            window.fbq("track", "ViewContent", {
-              content_ids: [productId],
-              content_type: "product",
-              value: res?.product?.price,
-              currency: "INR",
-            });
-            pixelRef.current = true; // Set the ref to true to prevent duplicate tracking
-          }
-        }
+
         const res2 = await apiClient.get({
           url: `/products/byCategory/necklaces`,
         });
@@ -100,15 +88,7 @@ const ProductDetails = () => {
         setProductDetails(productData);
         await addProductView(productId);
         
-        // Track ViewContent event for Facebook Pixel
-        trackFBEvent('ViewContent', {
-          content_name: productData.name,
-          content_category: productData.category,
-          content_ids: [productId],
-          content_type: 'product',
-          value: productData.price,
-          currency: 'INR'
-        });
+
       } catch (error) {
         console.log(error);
         console.log(error?.data?.message);
@@ -127,16 +107,7 @@ const ProductDetails = () => {
     setProductDetails(data);
     localStorage.setItem("cartItems", JSON.stringify(cartData));
     
-    // Track "Add to Cart" event with Facebook Pixel
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'AddToCart', {
-        content_ids: [productId],
-        content_name: productDetails.name,
-        content_type: 'product',
-        value: productDetails.price,
-        currency: 'INR'
-      });
-    }
+
     
     toast.success("Item added to cart");
     await updateCarts(productId, 1);
@@ -151,16 +122,7 @@ const ProductDetails = () => {
           showToast: true,
         });
         
-        // Track "Add to Wishlist" event with Facebook Pixel
-        if (typeof window.fbq === 'function') {
-          window.fbq('track', 'AddToWishlist', {
-            content_ids: [productId],
-            content_name: productDetails.name,
-            content_type: 'product',
-            value: productDetails.price,
-            currency: 'INR'
-          });
-        }
+
       } catch (error) {
         console.log(error?.data?.message);
       }

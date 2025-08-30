@@ -12,8 +12,7 @@ import { lazy, Suspense } from "react";
 import { LoadingSpinner } from "./components/LoadingSpinner";
 import { Toaster } from "react-hot-toast";
 import { QueryClient, QueryClientProvider } from "react-query";
-import FacebookPixelTracker from "./components/FacebookPixelTracker";
-import FacebookPixelTest from "./components/FacebookPixelTest";
+
 
 // Corrected import paths for Login and Signup components
 import Login from "./pages/Login/Login";
