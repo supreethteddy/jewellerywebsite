@@ -181,10 +181,10 @@ const PrivacyPolicy = () => {
             <li>
               Email:{" "}
               <a
-                href="mailto:support@soulsun.in"
+                href="mailto:support@jewello.in"
                 className="text-blue-600 hover:underline"
               >
-                support@soulsun.in
+                support@jewello.in
               </a>
             </li>
             <li>

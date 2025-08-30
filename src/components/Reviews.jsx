@@ -29,42 +29,42 @@ const reviews = [
     reviewer: "Priya M.",
     rating: 5,
     review:
-      "The necklace I bought from Soulsun is absolutely stunning! The craftsmanship is exceptional, and it looks even better in person. I’ve received so many compliments!",
+      "The necklace I bought from Jewello is absolutely stunning! The craftsmanship is exceptional, and it looks even better in person. I've received so many compliments!",
     date: "2024-12-20",
   },
   {
     reviewer: "Rahul S.",
     rating: 4,
     review:
-      "Bought this ring from Soulsun for my fiancée, and she adores it! The design is elegant, though the size ran a bit small. Great quality overall.",
+      "Bought this ring from Jewello for my fiancée, and she adores it! The design is elegant, though the size ran a bit small. Great quality overall.",
     date: "2024-12-18",
   },
   {
     reviewer: "Anasuya",
     rating: 5,
     review:
-      "These earrings from Soulsun are perfect for every occasion. Lightweight, beautifully designed, and they sparkle brilliantly under the light!",
+      "These earrings from Jewello are perfect for every occasion. Lightweight, beautifully designed, and they sparkle brilliantly under the light!",
     date: "2024-12-15",
   },
   {
     reviewer: "Keerthi Krishna",
     rating: 4,
     review:
-      "The necklace I got from Soulsun is gorgeous, but the chain feels a bit delicate. Still, it’s a great purchase for the price!",
+      "The necklace I got from Jewello is gorgeous, but the chain feels a bit delicate. Still, it's a great purchase for the price!",
     date: "2024-12-14",
   },
   {
     reviewer: "Rajesh P.",
     rating: 5,
     review:
-      "The ring I ordered from Soulsun exceeded my expectations! The details are intricate, and the gemstone is flawless. Highly recommended.",
+      "The ring I ordered from Jewello exceeded my expectations! The details are intricate, and the gemstone is flawless. Highly recommended.",
     date: "2024-12-10",
   },
   {
     reviewer: "Sneha M.",
     rating: 4,
     review:
-      "Lovely earrings with a timeless design from Soulsun. They arrived in elegant packaging, but one back clasp felt slightly loose.",
+      "Lovely earrings with a timeless design from Jewello. They arrived in elegant packaging, but one back clasp felt slightly loose.",
     date: "2024-12-09",
   },
 ];

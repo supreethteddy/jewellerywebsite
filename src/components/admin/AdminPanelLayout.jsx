@@ -60,7 +60,7 @@ const AdminPanelLayout = () => {
           <div className="relative w-full">
             <div className="md:h-screen bg-[#F6F8F9] fixed left-0 py-[2rem] px-[1rem] hidden md:flex flex-col justify-between gap-1">
               <div className="h-full flex flex-col items-center">
-                <h2 className="text-3xl !text-primary">SOULSUN</h2>
+                <h2 className="text-3xl !text-primary">JEWELLO</h2>
                 <div className="space-y-1 pt-[2rem] w-full">
                   {pages.map((page, index) => (
                     <a

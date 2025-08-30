@@ -586,7 +586,7 @@ const SourceAnalytics = () => {
                     className="text-gray-400 flex-shrink-0"
                   />
                   <span>
-                    https://soulsun.in/?utm_source=SOURCE&utm_medium=MEDIUM&utm_campaign=CAMPAIGN
+                    https://jewello.in/?utm_source=SOURCE&utm_medium=MEDIUM&utm_campaign=CAMPAIGN
                   </span>
                 </div>
               </div>
@@ -601,7 +601,7 @@ const SourceAnalytics = () => {
                       From Google Search:
                     </p>
                     <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700 overflow-x-auto">
-                      https://soulsun.in/?utm_source=google&utm_medium=search&utm_campaign=spring-sale
+                      https://jewello.in/?utm_source=google&utm_medium=search&utm_campaign=spring-sale
                     </div>
                   </div>
 
@@ -610,7 +610,7 @@ const SourceAnalytics = () => {
                       From Facebook Ads:
                     </p>
                     <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700 overflow-x-auto">
-                      https://soulsun.in/?utm_source=facebook&utm_medium=cpc&utm_campaign=fb-offer
+                      https://jewello.in/?utm_source=facebook&utm_medium=cpc&utm_campaign=fb-offer
                     </div>
                   </div>
 
@@ -619,7 +619,7 @@ const SourceAnalytics = () => {
                       From Email Newsletter:
                     </p>
                     <div className="bg-gray-50 p-2 rounded border border-gray-200 font-mono text-sm text-gray-700 overflow-x-auto">
-                      https://soulsun.in/?utm_source=newsletter&utm_medium=email&utm_campaign=weekly-deals
+                      https://jewello.in/?utm_source=newsletter&utm_medium=email&utm_campaign=weekly-deals
                     </div>
                   </div>
                 </div>

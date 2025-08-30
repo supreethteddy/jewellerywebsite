@@ -58,7 +58,7 @@ const BannerSlider = () => {
           className="wrapper flex flex-col gap-2 absolute left-[2rem] bottom-[3rem] text-black"
         >
           <p className="uppercase font-light">New In</p>
-          <h4 className="heading-2 uppercase">The Soulsun Collection</h4>
+                          <h4 className="heading-2 uppercase">The Jewello Collection</h4>
           <LinkButton path="/shop/rings" className="w-fit">
             Checkout Rings
           </LinkButton>

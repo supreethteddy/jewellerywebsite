@@ -66,7 +66,7 @@ const Wishlist = () => {
             <img
               src={"/empty-folder.png"}
               className="w-20 h-20"
-              alt={"no data | soulsun"}
+              alt={"no data | jewello"}
             />
           <p className="font-light">Wishlist is empty.</p>
           </div>

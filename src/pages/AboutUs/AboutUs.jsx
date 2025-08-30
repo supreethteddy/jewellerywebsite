@@ -17,7 +17,7 @@ const AboutUs = () => {
             data-aos="fade-up"
             className="text-[3rem] sm:text-6xl uppercase text-center"
           >
-            soulsun
+            jewello
           </h1>
         </div>
       </div>
@@ -28,7 +28,7 @@ const AboutUs = () => {
         >
           At{" "}
           <b>
-            SoulSun, we believe that jewellery is more than just an
+            Jewello, we believe that jewellery is more than just an
             accessory--it's a form of self-expression, a keepsake of cherished
             moments, and a piece of timeless artistry. Founded by husband and
             wife duo Sanjuktaa and Sagar,
@@ -80,7 +80,7 @@ const AboutUs = () => {
             <p className="uppercase text-xl mb-2">Our Vision</p>
             <p className="text-md font-light">
               With our combined expertise in fashion, luxury, and craftsmanship,
-              SoulSun was born—a brand that embodies our love for fine jewelry,
+              Jewello was born—a brand that embodies our love for fine jewelry,
               exceptional quality, and accessible elegance. We meticulously
               curate and create jewelry that blends sophistication,
               affordability, and timeless beauty.
@@ -140,7 +140,7 @@ const AboutUs = () => {
       </section>
       <div className="py-[3rem] wrapper">
         <p className="text-center max-w-[35rem] mx-auto">
-          "Soulsun's jewelry resemble works of art"
+          "Jewello's jewelry resemble works of art"
         </p>
         <div className="flex justify-center gap-2 mt-4">
           {Array(5)
@@ -155,7 +155,7 @@ const AboutUs = () => {
           For us, jewelry is more than just an ornament; it carries memories,
           emotions, and traditions. Whether you’re celebrating a milestone,
           embracing your individuality, or simply indulging in a beautiful
-          piece, <b>SoulSun is here to make those moments even more special.</b>
+          piece, <b>Jewello is here to make those moments even more special.</b>
           <br />
           <br />
           <b>
@@ -164,7 +164,7 @@ const AboutUs = () => {
           </b>
           <br />
           <br />
-          <b>— Sanjuktaa & Sagar, Co-founders of SoulSun</b>
+          <b>— Sanjuktaa & Sagar, Co-founders of Jewello</b>
         </p>
       </div>
       <img

@@ -58,7 +58,7 @@ const CouponsTable = ({
                 <img
                   src={"/empty-folder.png"}
                   className="w-20 h-20"
-                  alt={"no data | soulsun"}
+                  alt={"no data | jewello"}
                 />
                 <p className="font-light">List is empty.</p>
               </div>

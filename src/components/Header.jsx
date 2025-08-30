@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   earringsItems,
   headerLinks,
-  logoImg,
   necklaceItems,
   ringsItems,
   smHeaderLinks,
@@ -94,16 +93,14 @@ const Header = () => {
     <div className="border pb-2 bg-white left-0 top-0 z-[100] fixed w-full">
       <div className="p-2 text-white text-center bg-primary text-[.95rem]">
         Thanks for visiting! Enjoy 15% on all orders | Use Code:{" "}
-        <span className="font-semibold tracking-wide">SOULFLARE15</span>
+        <span className="font-semibold tracking-wide">JEWELLO15</span>
       </div>
       <div className="pt-2 wrapper grid grid-cols-[30%_auto] sm:grid-cols-[35%_auto_35%] gap-4 sm:gap-7 lg:items-end items-center lg:pb-2">
         <div className="flex items-end gap-[3rem]">
           <Link className="w-fit" to="/">
-            <img
-              src={logoImg}
-              alt="logo"
-              className="w-[4rem] md:w-[4rem] md:min-w-[4rem] object-contain"
-            />
+            <div className="w-[4rem] md:w-[4rem] md:min-w-[4rem] h-[4rem] md:h-[4rem] md:min-h-[4rem] bg-primary rounded-full flex items-center justify-center">
+              <span className="text-white text-xl font-bold">J</span>
+            </div>
           </Link>
           <div className="hidden lg:flex gap-6 h-full">
             {headerLinks.map((link) => (
@@ -123,7 +120,7 @@ const Header = () => {
           to="/"
           className="sm:block hidden w-fit mx-auto text-3xl text-primary text-center"
         >
-          SOULSUN
+          JEWELLO
         </Link>
         <div className="flex gap-4 sm:gap-6 items-center justify-end lg:pb-2">
           {/* Conditional rendering for Login/Profile */}

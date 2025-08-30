@@ -27,7 +27,7 @@ const MustHave = () => {
   return (
     <div data-aos="fade-up" className="py-[4rem]">
       <h2 className="uppercase text-xl text-center tracking-widest">
-        soulsun MUST HAVE
+        JEWELLO MUST HAVE
       </h2>
       <div className="mt-[2rem]">
         <Swiper

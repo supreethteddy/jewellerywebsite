@@ -1,4 +1,3 @@
-import { Facebook, Instagram } from "lucide-react";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -43,22 +42,11 @@ const Footer = () => {
         <div className="flex sm:col-span-2 md:col-span-1 flex-col gap-3">
           <p className="desc uppercase">About us</p>
           <p className="text-sm font-light max-w-lg">
-            At Soulsun, we believe jewellery goes beyond beauty. It represents
+            At Jewello, we believe jewellery goes beyond beauty. It represents
             love, milestones, and unforgettable moments. Our mission is simple —
             to create timeless, elegant pieces that speak to your heart and
             become a meaningful part of your journey.
           </p>
-          <div className="flex gap-4 mt-5">
-            <Link to="#">
-              <Facebook strokeWidth={1.3} size={22} />
-            </Link>
-            <Link
-              to="https://www.instagram.com/soulsunofficial/"
-              target="_blank"
-            >
-              <Instagram strokeWidth={1.3} size={22} />
-            </Link>
-          </div>
         </div>
         <div className="flex md:justify-end">
           <div className="flex flex-col gap-3">

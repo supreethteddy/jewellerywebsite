@@ -36,7 +36,7 @@ const SoulsunCollection = () => {
       >
         <div className="h-full border relative">
           <h2 className="uppercase mt-[-1rem] bg-white w-fit mx-auto text-lg px-1 text-center tracking-widest">
-            SOULSUN COLLECTION
+            JEWELLO COLLECTION
           </h2>
           <div className="mt-[1rem]">
           {/* <div className="mt-[2rem]"> */}
@@ -120,7 +120,7 @@ const SoulsunCollection = () => {
         </div>
         <div className="p-5 bg-[#1C1B1B] text-white flex items-center">
           <p>
-            Welcome to Soulsun! Those born under this intense water sign
+            Welcome to Jewello! Those born under this intense water sign
             are celebrated for their passion, determination, and magnetic
             presence. Represented by the scorpion, Scorpios are known for their
             depth and transformative power, diving fearlessly into the mysteries

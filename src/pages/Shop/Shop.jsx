@@ -10,28 +10,28 @@ import CustomImg from "../../components/ui/customImg";
 const earringData = {
   heading: "Earrings & Earcuffs",
   subHeading:
-    "Explore SOULSUN's luxury sculptural earring & earcuff collections - perfect for any wardrobe. From simple mini hoops, to statement must-haves, and in a stunning gold or silver plated finish.",
+    "Explore JEWELLO's luxury sculptural earring & earcuff collections - perfect for any wardrobe. From simple mini hoops, to statement must-haves, and in a stunning gold or silver plated finish.",
   // products: earringsItems,
 };
 
 const ringData = {
   heading: "Rings",
   subHeading:
-    "Explore Soulsun stunning luxury collection of rings. From everyday sets to statement rings, and a beautiful gold or silver plated finish - shop your new jewellery favourites.",
+    "Explore Jewello stunning luxury collection of rings. From everyday sets to statement rings, and a beautiful gold or silver plated finish - shop your new jewellery favourites.",
   // products: ringsItems,
 };
 
 const necklaceData = {
   heading: "Necklaces",
   subHeading:
-    "Discover SOULSUN's exquisite collection of luxury necklaces. From delicate chains to bold statement pieces, available in stunning gold or silver plated finishes – elevate your style with the perfect accessory.",
+    "Discover JEWELLO's exquisite collection of luxury necklaces. From delicate chains to bold statement pieces, available in stunning gold or silver plated finishes – elevate your style with the perfect accessory.",
   // products: necklaceItems,
 };
 
 const braceletData = {
   heading: "Cuffs, Bracelets & Anklets",
   subHeading:
-    "Discover Soulsun stunning luxury collection of bracelets. From everyday sets to statement bracelets, and a beautiful gold or silver plated finish - shop your new jewellery favourites.",
+    "Discover Jewello stunning luxury collection of bracelets. From everyday sets to statement bracelets, and a beautiful gold or silver plated finish - shop your new jewellery favourites.",
   // products: braceletItems,
 };
 
@@ -172,7 +172,7 @@ const Shop = () => {
         </div> */}
       </section>
       <section data-aos="fade-up" className="py-[2rem] wrapper text-center">
-        <p className="uppercase text-xl mb-2">LATEST SOULSUN COLLECTION</p>
+        <p className="uppercase text-xl mb-2">LATEST JEWELLO COLLECTION</p>
         <div className="grid grid-cols-2 gap-5 max-w-xl mx-auto">
           {rings
             ? rings?.slice(0, 2).map((item) => (

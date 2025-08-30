@@ -41,7 +41,7 @@ export const displayRazorpay = async (amount, reset, setCartItems,data) => {
       key: process.env.REACT_APP_RAZORPAY_KEY_ID,
       amount: amount * 100,
       currency: "INR",
-      name: "SoulSun",
+              name: "Jewello",
       description: "Payment for products",
       image: require("../../../assets/logo/logo.png"),
       prefill: {

@@ -1,6 +1,4 @@
-import logoImg from "./assets/logo/logo.png";
 
-export { logoImg };
 
 export const headerLinks = [
   // {
